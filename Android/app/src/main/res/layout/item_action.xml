@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tool="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    android:layout_marginBottom="@dimen/space_10">
+    <RelativeLayout
+        android:id="@+id/clickView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="0dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true">
+        <TextView
+            android:id="@+id/actionId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="@dimen/space_20"
+            android:layout_marginLeft="@dimen/space_20"
+            style="@style/font_15_blue"
+            tools:text="139144572"/>
+
+        <TextView
+            android:id="@+id/actionAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="@dimen/space_16"
+            android:layout_marginLeft="@dimen/space_20"
+            android:layout_below="@+id/actionId"
+            style="@style/font_15_black2"
+            tools:text="yellowhammer"/>
+
+        <TextView
+            android:id="@+id/actionDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/space_20"
+            android:layout_alignBaseline="@+id/actionId"
+            style="@style/font_12_black2"
+            tools:text="2018년 8월 2일 오후 3:58:27"/>
+
+        <TextView
+            android:id="@+id/actionTxid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/actionAccount"
+            android:layout_marginTop="@dimen/space_8"
+            android:layout_marginLeft="@dimen/space_20"
+            android:layout_marginRight="@dimen/space_20"
+            android:layout_alignParentLeft="true"
+            android:singleLine="true"
+            android:ellipsize="middle"
+            style="@style/font_12_black2"
+            tools:text="TXID : 929c5417c6e7a4eee0682737c8fbcf65884eb9ae2fbfe491237a27da1b89fcbd"/>
+
+        <TextView
+            android:id="@+id/actionMemo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/actionTxid"
+            android:layout_marginTop="@dimen/space_8"
+            android:layout_marginLeft="@dimen/space_20"
+            android:layout_marginRight="@dimen/space_20"
+            android:layout_alignParentLeft="true"
+            android:singleLine="true"
+            android:ellipsize="middle"
+            style="@style/font_12_gray5"
+            tools:text="Memo : hellow worldfb sdkjsd lkds llkd ljke l3k4nl lskd dsln lkd"/>
+
+
+        <RelativeLayout
+            android:id="@+id/actionLine"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@+id/actionMemo"
+            android:layout_marginTop="@dimen/space_20"
+            android:layout_marginLeft="@dimen/space_20"
+            android:layout_marginRight="@dimen/space_20"
+            android:background="@color/colorGray0"/>
+
+        <TextView
+            android:id="@+id/actionType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/actionLine"
+            android:layout_marginTop="@dimen/space_20"
+            android:layout_marginLeft="@dimen/space_20"
+            android:layout_marginBottom="@dimen/space_20"
+            android:layout_alignParentLeft="true"
+            style="@style/font_12_blue"
+            tools:text="Receive"/>
+
+        <TextView
+            android:id="@+id/actionAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/space_20"
+            android:layout_alignBaseline="@+id/actionType"
+            style="@style/font_14_green_bold"
+            tools:text="+12 EOS"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/colorGray0"/>
+</LinearLayout>

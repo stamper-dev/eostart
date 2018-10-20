@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/accountRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_box_ripple"
+    android:clickable="true">
+    <ImageView
+        android:id="@+id/accountIc"
+        android:layout_width="@dimen/space_24"
+        android:layout_height="@dimen/space_24"
+        android:layout_marginBottom="@dimen/space_16"
+        android:layout_marginLeft="@dimen/space_20"
+        android:layout_marginRight="@dimen/space_10"
+        android:layout_marginTop="@dimen/space_15"
+        android:layout_alignParentLeft="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_account_key" />
+    <TextView
+        android:id="@+id/accountTv"
+        style="@style/font_17_black2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/accountIc" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/space_20"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_arrow_to_right" />
+    <View
+        android:id="@+id/accountLine"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@+id/accountIc"
+        android:layout_marginLeft="@dimen/space_16"
+        android:background="@color/colorGray0" />
+</RelativeLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recentRoot"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/space_50"
+    android:background="@drawable/white_box_ripple"
+    android:clickable="true">
+    <TextView
+        android:id="@+id/recentAccountTv"
+        style="@style/font_13_black2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/space_20"
+        tools:text="ffffggggffff"/>
+
+
+    <ImageView
+        android:id="@+id/recentArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/space_16"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_arrow_to_right" />
+
+    <TextView
+        android:id="@+id/recentDateTv"
+        style="@style/font_13_gray5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/recentArrow"
+        android:layout_marginRight="@dimen/space_10"
+        tools:text="20343.32423.34"/>
+
+
+    <View
+        android:id="@+id/recentLine"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/colorGray0"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

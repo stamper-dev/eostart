@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F4863</color>
+    <color name="colorPrimaryDark">#2A324A</color>
+    <!--<color name="colorAccent">#02B0D8</color>-->
+    <!--<color name="colorAccentDark">#008AAA</color>-->
+    <color name="colorAccent">#2359B8</color>
+    <color name="colorAccentDark">#164392</color>
+
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorGray0">#ECECEC</color>
+    <color name="colorGray1">#B9C3E3</color>
+    <color name="colorGray2">#FAFAFA</color>
+    <color name="colorGray3">#B3B3B3</color>
+    <color name="colorGray4">#D6D6D6</color>
+    <color name="colorGray5">#959595</color>
+    <color name="colorGray6">#F2F2F2</color>
+    <color name="colorGray7">#C2C2C2</color>
+    <color name="colorGray8">#BEBEBE</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorBlack2">#212121</color>
+    <color name="colorRed">#FF5656</color>
+    <color name="colorRedLight">#FF7575</color>
+    <color name="colorGreen">#00CF1C</color>
+    <color name="colorBlue">#2359B8</color>
+    <color name="colorSky">#02B0D8</color>
+    <color name="colorWellcome">#8D9AC4</color>
+
+
+    <color name="colorPrimaryLight1">#5A6482</color>
+    <color name="colorPrimaryLight2">#8E97AF</color>
+
+    <!--<color name="colorAccentLight">#00C6F3</color>-->
+    <color name="colorAccentLight">#3471DE</color>
+    <color name="colorRipple">#33000000</color>
+
+    <color name="colorBrown">#727272</color>
+    <color name="colorBrownLight">#959595</color>
+
+
+    <color name="colorGrayBg">#F2F2F2</color>
+    <color name="colorCardBg">#4B5775</color>
+    <color name="colorRam">#02B0D8</color>
+    <color name="colorCpu">#FF9900</color>
+    <color name="colorNet">#44FB81</color>
+    <color name="colorPinUnselected">#515B7B</color>
+
+    <array name="wellcome_colors">
+        <item name="wellcome_0">#9dffa3</item>
+        <item name="wellcome_1">#ff5722</item>
+        <item name="wellcome_2">#c1bbff</item>
+        <item name="wellcome_3">#ffd096</item>
+    </array>
+
+
+    <color name="top_stroke_color">#0000FF</color>
+    <color name="bottom_stroke_color">#FF0000</color>
+    <color name="main">#00FF00</color>
+</resources>

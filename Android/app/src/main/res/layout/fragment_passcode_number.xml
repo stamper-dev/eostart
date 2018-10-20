@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/space_4"
+    android:layout_marginBottom="@dimen/space_32">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="@dimen/space_20"
+        android:layout_marginRight="@dimen/space_20"
+        android:gravity="center">
+        <wannabit.io.eoswallet.view.SquareButton
+            android:id="@+id/pincode_number0"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            style="@style/font_34_white_bold"
+            android:text="1" />
+        <wannabit.io.eoswallet.view.SquareButton
+            android:id="@+id/pincode_number1"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            style="@style/font_34_white_bold"
+            android:layout_marginLeft="@dimen/space_24"
+            android:text="2" />
+        <wannabit.io.eoswallet.view.SquareButton
+            android:id="@+id/pincode_number2"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            style="@style/font_34_white_bold"
+            android:layout_marginLeft="@dimen/space_24"
+            android:text="3" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="@dimen/space_20"
+        android:layout_marginRight="@dimen/space_20"
+        android:gravity="center">
+        <wannabit.io.eoswallet.view.SquareButton
+            android:id="@+id/pincode_number3"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            style="@style/font_34_white_bold"
+            android:text="4" />
+        <wannabit.io.eoswallet.view.SquareButton
+            android:id="@+id/pincode_number4"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            style="@style/font_34_white_bold"
+            android:layout_marginLeft="@dimen/space_24"
+            android:text="5" />
+        <wannabit.io.eoswallet.view.SquareButton
+            android:id="@+id/pincode_number5"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            style="@style/font_34_white_bold"
+            android:layout_marginLeft="@dimen/space_24"
+            android:text="6" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="@dimen/space_20"
+        android:layout_marginRight="@dimen/space_20"
+        android:gravity="center">
+        <wannabit.io.eoswallet.view.SquareButton
+            android:id="@+id/pincode_number6"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            style="@style/font_34_white_bold"
+            android:text="7" />
+        <wannabit.io.eoswallet.view.SquareButton
+            android:id="@+id/pincode_number7"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            style="@style/font_34_white_bold"
+            android:layout_marginLeft="@dimen/space_24"
+            android:text="8" />
+        <wannabit.io.eoswallet.view.SquareButton
+            android:id="@+id/pincode_number8"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            style="@style/font_34_white_bold"
+            android:layout_marginLeft="@dimen/space_24"
+            android:text="9" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="@dimen/space_20"
+        android:layout_marginRight="@dimen/space_20"
+        android:gravity="center">
+        <wannabit.io.eoswallet.view.SquareButton
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="invisible"/>
+        <wannabit.io.eoswallet.view.SquareButton
+            android:id="@+id/pincode_number9"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            style="@style/font_34_white_bold"
+            android:layout_marginLeft="@dimen/space_24"
+            android:text="0" />
+        <wannabit.io.eoswallet.view.SquareImageButton
+            android:id="@+id/pincode_back"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_passcode_back"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:drawableStart="@drawable/ic_passcode_back"
+            android:layout_marginLeft="@dimen/space_24"/>
+    </LinearLayout>
+</LinearLayout>

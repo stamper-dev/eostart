@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/space_26">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_bg"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_width="@dimen/space_64"
+            android:layout_height="@dimen/space_64"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/space_8"
+            android:src="@drawable/img_addaccount_correct"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_16"
+            style="@style/font_14_accent_bold"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/space_8"
+            android:text="@string/str_send_success_title"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="@dimen/space_10"
+            android:layout_marginLeft="@dimen/space_16"
+            android:layout_marginRight="@dimen/space_16"
+            android:background="@color/colorGray0"
+            android:layout_alignParentBottom="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_10"
+            style="@style/font_15_black2"
+            android:gravity="center_horizontal"
+            android:text="@string/str_txid"/>
+
+        <TextView
+            android:id="@+id/sendTxid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_10"
+            android:layout_marginLeft="@dimen/space_24"
+            android:layout_marginRight="@dimen/space_24"
+            style="@style/font_12_gray5"
+            android:gravity="center_horizontal"
+            android:text="@string/str_txid"
+            tools:text="894f9272d6bf90c91af05b9b0ab55d749c8adaa88f108213c4a38601a86ec87b"/>
+
+        <Button
+            android:id="@+id/singleOK"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_24"
+            android:background="@drawable/btn_gray6_round_rect"
+            style="@style/font_17_accent"
+            android:textAllCaps="false"
+            android:text="@string/str_ok"/>
+
+    </LinearLayout>
+</LinearLayout>

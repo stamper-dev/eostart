@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/languageRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_box_ripple"
+    android:clickable="true">
+    <TextView
+        android:id="@+id/languageTv"
+        style="@style/font_17_black2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="@dimen/space_18"
+        android:layout_marginLeft="@dimen/space_16"
+        android:layout_marginRight="@dimen/space_12"
+        android:layout_marginTop="@dimen/space_17" />
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/languageCh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/space_20"
+        android:button="@drawable/btn_checkbox" />
+    <View
+        android:id="@+id/languageLine"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@+id/languageTv"
+        android:layout_marginLeft="@dimen/space_16"
+        android:background="@color/colorGray0" />
+</RelativeLayout>

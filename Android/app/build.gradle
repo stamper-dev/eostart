@@ -1,0 +1,75 @@
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "wannabit.io.eoswallet"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 125
+        versionName "1.2.1"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('debug.keystore')
+        }
+    }
+
+    dataBinding {
+        enabled true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:28.0.0-rc01'
+    implementation 'com.android.support:design:28.0.0-rc01'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+
+    implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.4'
+
+    //google guava
+    implementation 'com.google.guava:guava:23.0-android'
+
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+
+
+    //bottom navigation
+    implementation 'com.aurelhubert:ahbottomnavigation:2.1.0'
+
+    //viewpager indicator
+    implementation 'me.relex:circleindicator:1.2.2@aar'
+    
+    //permission check
+    implementation 'gun0912.ted:tedpermission:1.0.3'
+
+    //sqliteChiper
+    implementation 'net.zetetic:android-database-sqlcipher:3.5.9@aar'
+
+
+    //glide for images
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+
+    //for qr code
+    implementation 'com.journeyapps:zxing-android-embedded:3.5.0'
+
+
+    //for test
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+}
+apply plugin: 'com.google.gms.google-services'

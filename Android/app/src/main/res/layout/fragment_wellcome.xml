@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/space_72">
+        <ImageView
+            android:id="@+id/wellcomeImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/tutorial_img1"/>
+
+        <TextView
+            android:id="@+id/wellcomeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/wellcomeImg"
+            android:layout_marginTop="@dimen/space_24"
+            android:gravity="center"
+            style="@style/font_24_accent_bold"
+            android:text="@string/str_wellcome_title0"/>
+
+
+        <TextView
+            android:id="@+id/wellcomeMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/wellcomeTitle"
+            android:layout_marginTop="@dimen/space_12"
+            android:gravity="center"
+            style="@style/font_17_gray5"
+            android:text="@string/str_wellcome_msg1"/>
+    </RelativeLayout>
+
+</LinearLayout>

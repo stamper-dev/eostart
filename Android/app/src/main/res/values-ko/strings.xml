@@ -1,0 +1,301 @@
+<resources>
+    <string name="app_name">EOSTART</string>
+
+
+    <!--<string name="bp_base_url">https://api.eosnewyork.io:443</string>-->
+    <string name="bp_base_url">https://eos.greymass.com:443</string>
+    <string name="coinmarketcap_url">https://api.coinmarketcap.com/</string>
+    <string name="eospark_url">https://eospark.com/</string>
+    <string name="wannabit_test_url">https://wallet-api-dev.wannabit.io/</string>
+    <string name="wannabit_pro_url">https://wallet-api.wannabit.io/</string>
+    <string name="chain_id">aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906</string>
+    <string name="eospark_param_token">token</string>
+    <string name="eospark_param_trx_info">get_account_related_trx_info</string>
+    <string name="eospark_param_trx_check">get_transaction_detail_info</string>
+    <string name="db_pppw">wannabitgoeshere</string>
+
+
+
+    <string name="str_skip">Skip</string>
+    <string name="str_next">Next</string>
+    <string name="str_ok">OK</string>
+    <string name="str_yes">Yes</string>
+    <string name="str_confirm">Confirm</string>
+    <string name="str_paste">Paste</string>
+    <string name="str_clear">Clear</string>
+    <string name="str_cancel">Cancel</string>
+    <string name="str_edit">Edit</string>
+    <string name="str_close">Close</string>
+    <string name="str_new">New</string>
+    <string name="str_update">Update</string>
+    <string name="str_send">Send</string>
+    <string name="str_copy">Copy</string>
+    <string name="str_share">Share</string>
+    <string name="str_receive">Receive</string>
+    <string name="str_staked">Staked</string>
+    <string name="str_unstaked">Unstaked</string>
+    <string name="str_stake">Stake</string>
+    <string name="str_unstake">Unstake</string>
+    <string name="str_refund">Refund</string>
+    <string name="str_delete">Delete</string>
+    <string name="str_ram">RAM</string>
+    <string name="str_cpu">CPU</string>
+    <string name="str_net">NET</string>
+    <string name="str_krw">KRW</string>
+    <string name="str_usd">USD</string>
+    <string name="str_btc">BTC</string>
+    <string name="str_amount_1"><![CDATA["+1"]]></string>
+    <string name="str_amount_10"><![CDATA["+10"]]></string>
+    <string name="str_amount_50"><![CDATA["+50"]]></string>
+    <string name="str_amount_100"><![CDATA["+100"]]></string>
+    <string name="str_amount_max">Max</string>
+    <string name="str_txid">TXID</string>
+    <string name="str_eos_contract">eosio.token</string>
+    <string name="str_menu_account">Account</string>
+    <string name="str_menu_wallet">Wallet</string>
+    <string name="str_menu_history">Transaction</string>
+    <string name="str_menu_settings">Settings</string>
+    <string name="str_one_eos">1 EOS =<![CDATA[" "]]></string>
+    <string name="str_txid_dash">TXID :<![CDATA[" "]]></string>
+    <string name="str_memo_dash">Memo :<![CDATA[" "]]></string>
+    <string name="str_sent">Sent</string>
+    <string name="str_received">Received</string>
+    <string name="str_buy">%구매</string>
+    <string name="str_sell">%1$s 판매</string>
+    <string name="str_ramtrade_eos">Trade Ram (EOS)</string>
+    <string name="str_ramtrade_kb">Trade Ram (KB)</string>
+    <string name="str_buy_ram_for">Buy RAM for</string>
+    <string name="str_sell_ram_for">Sell RAM for</string>
+    <string name="str_buy_kb_tx1">Buy</string>
+    <string name="str_buy_kb_tx2">KB of RAM</string>
+    <string name="str_sell_kb_tx1">Sell</string>
+    <string name="str_sell_kb_tx2">KB of RAM</string>
+    <string name="str_dialog_title_buy_ram">램 구매</string>
+    <string name="str_dialog_title_sell_ram">램 판매</string>
+    <string name="str_will_pay">You will pay</string>
+    <string name="str_will_get">You will receive</string>
+    <string name="str_ram_fee">Fees (0.5%)</string>
+    <string name="str_balance">Balance</string>
+    <string name="str_total_ram">Total RAM</string>
+    <string name="str_ram_description1">현재가격 변동에 따라 구매 수량과 수수료에 변동이 있을 수 있습니다.</string>
+    <string name="str_ram_description2">수수료는 이오스 시스템에 지불 되는 것 입니다.</string>
+    <string name="str_ram_trade_success">램 거래가 성공적으로 완료 되었습니다.</string>
+    <string name="str_ram_trade_failed">램 거래가 실패 하였습니다.</string>
+    <string name="str_available">가능 금액<![CDATA[" : "]]></string>
+    <string name="str_total">전체 금액<![CDATA[" : "]]></string>
+    <string name="str_amount_10p"><![CDATA["10%"]]></string>
+    <string name="str_amount_30p"><![CDATA["30%"]]></string>
+    <string name="str_amount_50p"><![CDATA["50%"]]></string>
+    <string name="str_amount_70p"><![CDATA["70%"]]></string>
+    <string name="str_amount_100p"><![CDATA["100%"]]></string>
+    <string name="str_delegate_success">스테이킹이 성공적으로 완료 되었습니다.</string>
+    <string name="str_undelegate_success">언스테이킹이 성공적으로 완료 되었습니다.</string>
+    <string name="str_undelegate_description1">3일 후 refund 액수가 unstaked balance로 이동합니다.</string>
+    <string name="str_include_fee">(수수료 포함)</string>
+
+
+
+
+
+    <string name="str_private_key">Private Key</string>
+    <string name="str_private_key_add">Add Private Key</string>
+    <string name="str_account_name">계정명</string>
+    <string name="str_transactions">Transactions</string>
+    <string name="str_update_msg">새로운 버전이 있습니다. \n업데이트 하시겠습니까?</string>
+    <string name="str_update_force_msg">계속 사용하시려면 업데이트를 하셔야 합니다. \n업데이트 하시겠습니까?</string>
+    <string name="str_add_account">Add Account</string>
+    <string name="str_recent_account">최근 사용 계정</string>
+    <string name="str_memo_hint">Transaction Memo</string>
+    <string name="str_recipient_name">Recipient Account Name</string>
+    <string name="str_memo">Memo (옵션)</string>
+    <string name="str_amount">Amount</string>
+    <string name="str_no_pkey">No PrivateKey</string>
+    <string name="str_no_pkey_msg">Private key가 등록되지 않은 계정입니다. \n키를 등록하시면 송금 및 자원관리가 가능합니다.</string>
+    <string name="str_add_key">Add key</string>
+    <string name="str_common">Common</string>
+    <string name="str_start">Start</string>
+    <string name="str_aboutus">About us</string>
+    <string name="str_accounts">계정</string>
+    <string name="str_currency">통화</string>
+    <string name="str_language">언어</string>
+    <string name="str_facebook">Facebook</string>
+    <string name="str_twitter">Twitter</string>
+    <string name="str_homepage">Homepage</string>
+    <string name="str_intent_add">Private key가 등록되지 않은 계정입니다. \n키를 등록하시면 송금이 가능합니다</string>
+    <string name="str_restore_account">계정추가</string>
+    <string name="str_new_account">계정생성</string>
+    <string name="str_backup_key">Private Key 백업</string>
+    <string name="str_delete_wallet">계정 삭제</string>
+    <string name="str_account">Account</string>
+    <string name="str_warnning_key">Private Key 보안에 유의하세요.</string>
+    <string name="str_warnning_key_msg">앱을 삭제하거나 휴대폰 분실 시, 지갑 복구가 불가함으로 \n반드시 백업을 통해 private key를 보관해 주세요.</string>
+    <string name="str_copy_account">계정 복사</string>
+    <string name="str_copyed_msg">클립보드에 복사했습니다.</string>
+    <string name="str_copyed_account_msg">클립보드에 복사했습니다.</string>
+    <string name="str_account_delete">계정을 완전히 지웠습니다.</string>
+    <string name="str_wellcome_title0">Why EOSTART?</string>
+    <string name="str_wellcome_title1">Do you have EOS?</string>
+    <string name="str_wellcome_title2">EOStart<![CDATA["']]>s Security</string>
+    <string name="str_wellcome_msg0">가입 없음! 수수료없음!\nEOS토큰 지원\n완전한 탈중앙화 거래</string>
+    <string name="str_wellcome_msg1">여러 개의 계정을 관리할 수 있고\nEOS및 토큰의 자산을 한 눈에\n확인할 수 있습니다.</string>
+    <string name="str_wellcome_msg2">AES 암호화를 기반으로 서버 및 단말에 \nPrivate Key를 저장하지 않아 \n강력한 보안 시스템을 제공합니다.</string>
+    <string name="str_start_title">EOS Wallet\nstore and use digital currencies.</string>
+    <string name="str_start_msg">Most secure multi-asset bloackchain wallet that\nyou can bring everywhere you go.</string>
+    <string name="str_new_account_msg">EOStart 웹사이트에서 계정을 생성하시겠습니까?</string>
+    <string name="str_delete_title">계정삭제</string>
+    <string name="str_delete_msg">선택하신 계정을 삭제하시겠습니까?</string>
+    <string name="str_send_success_title">전송 성공</string>
+    <string name="str_no_transaction">이용 내역이 없습니다.</string>
+    <string name="str_loading_transaction">로딩 중..</string>
+    <string name="str_passcode_hint">(4자리 숫자 + 1자리 문자)</string>
+    <string name="str_set">설정</string>
+    <string name="str_service_set">서비스 설정</string>
+    <string name="str_service_security">보안</string>
+    <string name="str_service_applock">앱 잠금</string>
+    <string name="str_service_finger">지문 인증 사용</string>
+    <string name="str_service_telegram">Telegram</string>
+    <string name="str_terms">정책</string>
+    <string name="str_service_licenses">오픈소스 라이선스</string>
+    <string name="str_service_github">GitHub</string>
+    <string name="str_service_terms">이용 약관</string>
+    <string name="str_applock_title">앱 잠금 비밀번호를 입력해주세요.</string>
+    <string name="str_applock_title2">한번 더 입력해주세요.</string>
+    <string name="str_applock_des">비밀번호 분실 시 복구할 수 없습니다.\n비밀번호를 반드시 기억해주세요.</string>
+    <string name="str_applock_set">앱 잠금 설정</string>
+    <string name="str_unlock_title">비밀번호를 입력해주세요.</string>
+    <string name="str_applock_enabled">앱 잠금이 활성화 되었습니다.</string>
+    <string name="str_applock_diaabled">앱 잠금이 비활성화 되었습니다.</string>
+    <string name="str_dismiss">닫기</string>
+    <string name="str_request_finger_swipe">지문 인증을 하시면 앱 잠금이 해제됩니다.</string>
+    <string name="str_using_password">패스워드로 인증하기</string>
+
+
+
+    <string name="str_title_restore">계정 추가</string>
+    <string name="str_title_edit_token">토큰목록 </string>
+    <string name="str_title_my_account">내 EOS 계정</string>
+    <string name="str_title_ram">램 관리</string>
+    <string name="str_title_delegate">리소스 관리</string>
+
+
+
+    <string name="str_hint_account_name"><font size="15">Account Name</font></string>
+    <string name="str_hint_private_key"><font size="15">Private Key</font></string>
+
+
+
+    <string name="str_error_clipboard">클립보드에 저장된 글이 없습니다.</string>
+    <string name="str_error_no_account">존재하지 않는 계정입니다.</string>
+    <string name="str_error_network">통신장애, 잠시후 다시 이용해 주세요.</string>
+    <string name="str_error_privatekey">올바르지않은 Private key입니다.</string>
+    <string name="str_error_self_send">자기 자신의 계정으로는 전송이 불가합니다.</string>
+    <string name="str_already_existed_account">이미 등록된 계정입니다.</string>
+    <string name="str_error_no_list">최근 사용하신 계정이 없습니다.</string>
+    <string name="str_error_pincode">핀코드가 틀렸습니다.</string>
+    <string name="str_error_root_title">루팅폰.</string>
+    <string name="str_error_root_msg">보안 정책상 루팅폰을 지원하지않습니다.</string>
+    <string name="str_error_common_title">오류</string>
+    <string name="str_error_common_msg">죄송합니다.\n불안정한 네트워크 환경으로 서비스를 이용하실 수 없습니다.\n잠시후에 다시 이용해주세요.</string>
+    <string name="str_error_network_less">네트워크가 불안정하여 최신정보 업데이트에 실패했습니다..</string>
+    <string name="str_wrong_pincode">올바른 핀코드를 입력해 주세요.</string>
+    <string name="str_resource_less">자원이 부족합니다. CPU나 RAM을 확인해주세요.</string>
+    <string name="str_error_password_differ">입력하신 두 패스워드가 다릅니다.</string>
+    <string name="str_error_password">정확한 패스워드를 입력해 주세요.</string>
+
+
+
+    <string name="passcode_init">핀코드를 입력하세요.</string>
+    <string name="passcode_confirm">핀코드를 다시한번 입력하세요.</string>
+    <string name="passcode_check">확인을 위해 핀코드를 입력하세요.</string>
+    <string name="account_pattern">EOS 계정 12자리를 정확히 입력해주세요. \n(영소문자 a-z와 숫자 1-5가 입력가능합니다.)</string>
+    <string name="key_msg">Private key를 입력하시면 본앱을 통해 송금가능합니다. \n(차후 언제든 추가 가능합니다.)</string>
+
+
+    <string name="str_eos_time_format">yyyy-MM-dd<![CDATA["'"]]>T<![CDATA["'"]]>HH:mm:ss.SSS</string>
+    <string name="str_action_time_format">yy/MM/dd HH:mm:ss</string>
+    <string name="str_format_usd">###,###,###,###,###,###,###,###,###,##0.00</string>
+    <string name="str_format_krw">###,###,###,###,###,###,###,###,###,##0</string>
+    <string name="str_format_btc">###,###,###,###,###,###,###,##0.00000000</string>
+    <string name="str_decimal_pattern_0">###,###,###,###,###,###,###,##0</string>
+    <string name="str_decimal_pattern_1">###,###,###,###,###,###,###,##0.0</string>
+    <string name="str_decimal_pattern_2">###,###,###,###,###,###,###,##0.00</string>
+    <string name="str_decimal_pattern_3">###,###,###,###,###,###,###,##0.000</string>
+    <string name="str_decimal_pattern_4">###,###,###,###,###,###,###,##0.0000</string>
+    <string name="str_decimal_pattern_5">###,###,###,###,###,###,###,##0.00000</string>
+    <string name="str_decimal_pattern_6">###,###,###,###,###,###,###,##0.000000</string>
+    <string name="str_decimal_pattern_7">###,###,###,###,###,###,###,##0.0000000</string>
+    <string name="str_decimal_pattern_8">###,###,###,###,###,###,###,##0.00000000</string>
+    <string name="str_decimal_pattern_9">###,###,###,###,###,###,###,##0.000000000</string>
+    <string name="str_decimal_pattern_10">###,###,###,###,###,###,###,##0.0000000000</string>
+    <string name="str_decimal_pattern_11">###,###,###,###,###,###,###,##0.00000000000</string>
+    <string name="str_decimal_pattern_12">###,###,###,###,###,###,###,##0.000000000000</string>
+
+
+    <string-array name="passcode_number">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+
+    <string-array name="passcode_alphabet">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+        <item>H</item>
+        <item>I</item>
+        <item>J</item>
+        <item>K</item>
+        <item>L</item>
+        <item>M</item>
+        <item>N</item>
+        <item>O</item>
+        <item>P</item>
+        <item>Q</item>
+        <item>R</item>
+        <item>S</item>
+        <item>T</item>
+        <item>U</item>
+        <item>V</item>
+        <item>W</item>
+        <item>X</item>
+        <item>Y</item>
+        <item>Z</item>
+    </string-array>
+
+    <string-array name="support_currency">
+        <item>KRW</item>
+        <item>USD</item>
+        <item>BTC</item>
+    </string-array>
+
+    <string-array name="support_language">
+        <item>시스템 설정</item>
+        <item>한국어</item>
+        <item>English</item>
+    </string-array>
+
+
+    <string-array name="support_openSrc">
+        <item>guava:23.0-android/Apache 2.0</item>
+        <item>retrofit2.4.0/Apache 2.0</item>
+        <item>converter-gson:2.3.0/Apache 2.0</item>
+        <item>ahbottomnavigation:2.1.0/Apache 2.0</item>
+        <item>circleindicator:1.2.2/Apache 2.0</item>
+        <item>tedpermission:1.0.3/Apache 2.0</item>
+        <item>database-sqlcipher:3.5.9/BSD 3-clause</item>
+        <item>glide:3.7.0/Apache 2.0, BSD 2-clause</item>
+        <item>zxing-android-embedded:3.5.0/Apache 2.0</item>
+    </string-array>
+
+</resources>

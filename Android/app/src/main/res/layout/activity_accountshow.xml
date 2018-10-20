@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/rootLayer"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorGray6"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_bar_height"
+        android:layout_gravity="top"
+        android:background="?android:colorPrimary"
+        app:theme="@style/WhiteToolbarStyle">
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            style="@style/font_17_white"
+            android:textColor="@color/colorWhite"
+            android:text="@string/str_account"/>
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="@dimen/space_24"
+            android:layout_height="@dimen/space_24"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/space_36"
+            android:src="@drawable/img_point"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/space_6"
+            style="@style/font_17_red"
+            android:gravity="center"
+            android:text="@string/str_warnning_key"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/space_6"
+            android:gravity="center"
+            style="@style/font_12_black2"
+            android:text="@string/str_warnning_key_msg"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_36"
+            android:layout_marginRight="@dimen/space_20"
+            android:layout_marginLeft="@dimen/space_20"
+            android:background="@drawable/white_box"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/showKey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/space_16"
+                android:layout_marginLeft="@dimen/space_16"
+                android:layout_marginRight="@dimen/space_16"
+                android:gravity="center"
+                style="@style/font_12_gray5"
+                tools:text="@string/str_warnning_key_msg"/>
+
+            <Button
+                android:id="@+id/btn_copy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_16"
+                android:layout_marginRight="@dimen/space_16"
+                android:layout_marginTop="@dimen/space_16"
+                android:layout_marginBottom="@dimen/space_18"
+                android:minHeight="@dimen/space_36"
+                android:background="@drawable/btn_accent_round"
+                android:textSize="@dimen/text_size_17"
+                android:textColor="@color/colorWhite"
+                android:text="@string/str_copy"
+                android:elevation="@dimen/space_6"
+                android:textAllCaps="false"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

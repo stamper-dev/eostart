@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/space_26">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_8"
+            style="@style/font_14_accent_bold"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/space_8"
+            android:text="@string/str_add_key"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_8"
+            android:layout_marginRight="@dimen/space_12"
+            android:layout_marginLeft="@dimen/space_12"
+            style="@style/font_14_black2"
+            android:gravity="center_horizontal"
+            android:text="@string/str_intent_add"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_24"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/singleCancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn_gray6_bottomleft_corner"
+                style="@style/font_17_black2"
+                android:textAllCaps="false"
+                android:text="@string/str_cancel"/>
+            <Button
+                android:id="@+id/singleOK"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn_gray6_bottomright_corner"
+                style="@style/font_17_accent"
+                android:textAllCaps="false"
+                android:text="@string/str_add_key"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

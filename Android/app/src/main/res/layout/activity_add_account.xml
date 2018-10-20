@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/layerRoot"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@color/colorGrayBg">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_bar_height"
+        android:layout_gravity="top"
+        android:background="?android:colorPrimary"
+        app:theme="@style/WhiteToolbarStyle">
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            style="@style/font_17_white"
+            android:textColor="@color/colorWhite"/>
+    </android.support.v7.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/add_image"
+        android:layout_width="@dimen/space_64"
+        android:layout_height="@dimen/space_64"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="@dimen/space_32"
+        android:src="@drawable/img_addaccount_correct"/>
+
+    <TextView
+        android:id="@+id/add_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_24"
+        android:layout_marginLeft="@dimen/space_24"
+        android:layout_marginRight="@dimen/space_24"
+        android:layout_below="@+id/add_image"
+        android:gravity="center"
+        style="@style/font_12_accent"
+        android:text="@string/account_pattern"/>
+
+
+    <RelativeLayout
+        android:id="@+id/add_input_layer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_msg"
+        android:layout_marginTop="@dimen/space_12"
+        android:layout_marginLeft="@dimen/space_24"
+        android:layout_marginRight="@dimen/space_24">
+        <EditText
+            android:id="@+id/add_account"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_50"
+            android:layout_centerVertical="true"
+            android:maxLength="12"
+            android:hint="@string/str_hint_account_name"
+            android:textColorHint="@color/colorGray4"
+            android:background="@drawable/edittext_correct"
+            android:textCursorDrawable="@drawable/primary_cursor"
+            style="@style/font_15_black2"/>
+        <TextView
+            android:id="@+id/add_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/space_8"
+            android:layout_centerVertical="true"
+            style="@style/font_15_gray3"/>
+    </RelativeLayout>
+
+
+
+    <Button
+        android:id="@+id/add_Next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/space_54"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/btn_accent_rect"
+        android:textSize="@dimen/text_size_17"
+        android:textColor="@color/color_text_accent_btn"
+        android:text="@string/str_confirm"
+        android:textAllCaps="false"
+        android:enabled="false"/>
+
+</RelativeLayout>
+
+
+<!--<RelativeLayout-->
+    <!--android:id="@+id/layerRoot"-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:focusable="true"-->
+    <!--android:focusableInTouchMode="true">-->
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:paddingLeft="@dimen/space_16"-->
+        <!--android:paddingRight="@dimen/space_16"-->
+        <!--android:layout_marginTop="@dimen/space_16"-->
+        <!--android:orientation="vertical">-->
+
+        <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:id="@+id/input_layout_account"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+
+            <!--<EditText-->
+                <!--android:id="@+id/input_account"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:maxLength="12"-->
+                <!--android:hint="Account"/>-->
+
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+
+        <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:id="@+id/input_layout_privateKey"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="@dimen/space_32">-->
+
+            <!--<EditText-->
+                <!--android:id="@+id/input_privateKey"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:hint="PrivateKey"/>-->
+
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+
+    <!--</LinearLayout>-->
+
+    <!--<Button-->
+        <!--android:id="@+id/btnNext"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:text="NEXT"-->
+        <!--android:enabled="false"/>-->
+
+<!--</RelativeLayout>-->

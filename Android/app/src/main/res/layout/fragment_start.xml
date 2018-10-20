@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingBottom="@dimen/space_32"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/eostart_logo" />
+
+        <ImageView
+            android:id="@+id/startEosLogo"
+            android:layout_width="@dimen/space_108"
+            android:layout_height="@dimen/space_108"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/space_52"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logo_eos" />
+
+        <TextView
+            android:id="@+id/startTitle"
+            style="@style/font_17_white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/space_32"
+            android:gravity="center"
+            android:text="@string/str_start_title" />
+
+
+        <TextView
+            android:id="@+id/startMsg"
+            style="@style/font_13_wellcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/space_32"
+            android:gravity="center"
+            android:text="@string/str_start_msg" />
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/startControl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_restore"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minHeight="@dimen/space_54"
+            android:background="@drawable/btn_primarydark_rect"
+            android:textSize="@dimen/text_size_17"
+            android:textColor="@color/colorWhite"
+            android:text="@string/str_restore_account"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:id="@+id/btn_new"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minHeight="@dimen/space_54"
+            android:background="@drawable/btn_primarylight_rect"
+            android:textSize="@dimen/text_size_17"
+            android:textColor="@color/colorWhite"
+            android:text="@string/str_new_account"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+</RelativeLayout>

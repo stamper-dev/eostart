@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/rootLayer"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorGray6"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_bar_height"
+        android:layout_gravity="top"
+        android:background="?android:colorPrimary"
+        app:theme="@style/WhiteToolbarStyle">
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            style="@style/font_17_white"
+            android:textColor="@color/colorWhite"
+            android:text="@string/str_account"/>
+    </android.support.v7.widget.Toolbar>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/controlLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_action"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/space_54"
+                android:background="?android:attr/selectableItemBackground"
+                android:textSize="@dimen/text_size_17"
+                android:textColor="@color/colorAccent"
+                android:text="@string/str_backup_key"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/btn_delete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:minHeight="@dimen/space_54"
+                android:background="@drawable/btn_accent_rect"
+                android:textSize="@dimen/text_size_17"
+                android:textColor="@color/colorWhite"
+                android:text="@string/str_delete_wallet"
+                android:textAllCaps="false"/>
+        </LinearLayout>
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/mainScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:layout_above="@+id/controlLayout"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/space_16"
+                android:paddingBottom="@dimen/space_24">
+                <ImageView
+                    android:layout_width="@dimen/space_64"
+                    android:layout_height="@dimen/space_64"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/space_20"
+                    android:src="@drawable/img_account"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/space_12"
+                    style="@style/font_14_accent"
+                    android:text="@string/str_account_name"/>
+
+                <TextView
+                    android:id="@+id/accountName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/space_6"
+                    style="@style/font_17_black2"
+                    tools:text="yellowhammer"/>
+
+                <LinearLayout
+                    android:id="@+id/accountWarnning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_32"
+                    android:background="@drawable/white_box"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/space_24"
+                        android:layout_height="@dimen/space_24"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/space_12"
+                        android:src="@drawable/img_point"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/space_6"
+                        style="@style/font_17_red"
+                        android:gravity="center"
+                        android:text="@string/str_warnning_key"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/space_6"
+                        android:layout_marginBottom="@dimen/space_24"
+                        android:gravity="center"
+                        style="@style/font_12_black2"
+                        android:text="@string/str_warnning_key_msg"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>.
+
+    </RelativeLayout>
+</LinearLayout>
