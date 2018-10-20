@@ -1,0 +1,86 @@
+/* 
+  Localizable.strings
+  Eostart
+
+  Created by yongjoo on 2018. 9. 18..
+  Copyright © 2018년 yongjoo. All rights reserved.
+*/
+"version" = "version";
+"title_setting" = "Setting";
+"title_add_account" = "Add Account";
+"title_add_key" = "Add Private Key";
+"title_check_key" = "Private Key";
+"title_app_lock" = "App Lock Set";
+
+"top_title_init_password" = "Please enter your pin code for encryption.";
+"top_title_confirm_password" = "Enter again to confirm.";
+"top_title_verify_password" = "Enter your pin code for verification.";
+"key_check_des1" = "Always keep your Private Key\nin a safe place.";
+"key_check_des2" = "Account cannot be restored\nif you lose your phone or delete the application.\nYou MUST back up your private key in a secure place.";
+"key_add_des" = "This account does not have a registered private key. \nPlease insert your private key to make transactions and manage resources.";
+"delete_des" = "Would you like to delete this account?";
+"delete_ok" = "Account deleted.";
+"key_copied" = "Your private key is in clipboard.";
+"recent_account" = "Recently used Account";
+"send_success" = "Sending token was completed";
+"top_title_applock_enable" = "Insert passcode for App Lock.";
+"top_title_applock_confirm" = "Insert again passcode for confirm.";
+"top_title_applock_unlock" = "Insert your passcode for Unlock.";
+"top_title_applock_description" = "(App lock passcode cannot be recovered.\nPlease remember your passcode)";
+"msg_applock_enabeled" = "App Lock enabeld.";
+"msg_applock_disabeled" = "App Lock disabled.";
+"msg_applocked" = "App Locked";
+"msg_welcome0_0" = "Why EOSTART?";
+"msg_welcome0_1" = "No registration, no fees.\nEOS tokens supported \nCompletely decentralized transactions.";
+"msg_welcome1_0" = "Do you have EOS?";
+"msg_welcome1_1" = "Strong security\nDecentralized EOS wallet\nNo data stored in our servers.";
+"msg_welcome2_0" = "EOStart's Security";
+"msg_welcome2_1" = "Most secure multi-asset bloackchain wallet that\nyou can bring everywhere you go.";
+"msg_update_force" = "Update required to continue using application. \nWould you like to update the application?";
+"msg_update_suggest" = "New version available. \nWould you like to update the application?";
+
+"back" = "Back";
+"skip" = "Skip";
+"before" = "Before";
+"next" = "Next";
+"start" = "Start";
+"confirm" = "Confirm";
+"add_key" = "Add Private Key";
+"check_key" = "Check Key";
+"delete_account" = "Delete Account";
+"cancel" = "Cancel";
+"add_key2" = "Add key";
+"update" = "Update";
+
+"language_default" = "Default";
+"language_korean" = "한국어";
+"language_english" = "English";
+
+"currency_krw" = "KRW";
+"currency_usd" = "USD";
+"currency_btc" = "BTC";
+
+"set_account" = "Account";
+"set_currency" = "Currency";
+"set_language" = "Language";
+
+"set_applock" = "App Lock";
+"set_touchid" = "Touch Id";
+"set_faceid" = "Face Id";
+
+"set_homepage" = "Homepage";
+"set_telegram" = "Telegram";
+
+"set_github" = "GitHub";
+"set_licences" = "Open Licenses";
+"set_terms" = "Terms of Use";
+
+
+"error_no_account" = "This account does not exist.";
+"error_no_clipboard" = "No text from clipboard.";
+"error_invalid_privatekey" = "Invalid private key.";
+"error_two_password_differ" = "pin code is not same!";
+"error_invalid_password" = "Wrong password!";
+"error_network" = "Unable to update due to unstable network conditions.";
+"error_no_recent" = "No recent list.";
+

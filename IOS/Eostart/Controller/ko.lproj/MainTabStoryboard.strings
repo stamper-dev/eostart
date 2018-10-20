@@ -1,0 +1,24 @@
+
+/* Class = "UITabBarItem"; title = "Item 1"; ObjectID = "F0k-sb-JTm"; */
+"F0k-sb-JTm.title" = "Account";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "PcZ-xi-Jo3"; */
+"PcZ-xi-Jo3.title" = "Item";
+
+/* Class = "UITabBarItem"; title = "Item 2"; ObjectID = "SpX-aR-Wsa"; */
+"SpX-aR-Wsa.title" = "Wallet";
+
+/* Class = "UIViewController"; title = "Asset"; ObjectID = "VOf-mX-osY"; */
+"VOf-mX-osY.title" = "Asset";
+
+/* Class = "UIViewController"; title = "Wallet"; ObjectID = "VtA-nv-0hN"; */
+"VtA-nv-0hN.title" = "Wallet";
+
+/* Class = "UIViewController"; title = "Setting"; ObjectID = "lbM-OV-nPB"; */
+"lbM-OV-nPB.title" = "Setting";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "pCV-F5-zcS"; */
+"pCV-F5-zcS.title" = "Item";
+
+/* Class = "UIViewController"; title = "History"; ObjectID = "vjh-1p-JzA"; */
+"vjh-1p-JzA.title" = "History";

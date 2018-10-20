@@ -1,0 +1,30 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Eostart' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Eostart
+
+  target 'EostartTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'EostartUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  
+  pod 'Alamofire', '~> 4.7'
+  pod 'AlamofireImage', '~> 3.3'
+  pod 'SQLite.swift', '~> 0.11.5'
+  pod 'CryptoSwift'
+  pod 'SwiftKeychainWrapper'
+  pod 'DropDown'
+  pod 'MBProgressHUD', '~> 1.1.0'
+  pod 'Toaster'
+
+end

@@ -1,0 +1,85 @@
+/* 
+  Localizable.strings
+  Eostart
+
+  Created by yongjoo on 2018. 9. 18..
+  Copyright © 2018년 yongjoo. All rights reserved.
+*/
+"version" = "version";
+"title_setting" = "설정";
+"title_add_account" = "계정 추가";
+"title_add_key" = "개인키 추가";
+"키" = "개인키";
+"title_app_lock" = "앱 잠금 설정";
+
+"top_titl키_init_password" = "핀코드를 입력하세요.";
+"top_title_confirm_password" = "핀코드를 다시한번 입력하세요.";
+"top_title_verify_password" = "확인을 위해 핀코드를 입력하세요.";
+"key_check_des1" = "Private key 보안에 유의하세요.";
+"key_check_des2" = "앱을 삭제하거나 휴대폰 분실 시, 지갑 복구가 불가함으로 \n반드시 백업을 통해 private key를 보관해 주세요.";
+"key_add_des" = "Private key가 등록되지 않은 계정입니다. \n키를 등록하시면 송금 및 자원관리가 가능합니다.";
+"delete_des" = "선택하신 계정을 삭제하시겠습니까?";
+"delete_ok" = "계정을 완전히 지웠습니다.";
+"key_copied" = "개인키를 클립보드에 복사 하였습니다.";
+"recent_account" = "최근 사용 계정";
+"send_success" = "전송 완료";
+"top_title_applock_enable" = "핀 번호를 입력해 주세요.";
+"top_title_applock_confirm" = "핀 번호를 다시한번 입력해 주세요.";
+"top_title_applock_unlock" = "핀 번호를 입력";
+"top_title_applock_description" = "(핀 번호 분실 시 복구할 수 없습니다.\n반드시 기억해주세요)";
+"msg_applock_enabeled" = "앱 잠금을 사용하도록 설정했습니다.";
+"msg_applock_disabeled" = "앱 잠금을 비 활성화 하였습니다.";
+"msg_applocked" = "앱 잠김";
+"msg_welcome0_0" = "Why EOSTART?";
+"msg_welcome0_1" = "가입 없음! 수수료없음!\nEOS토큰 지원\n완전한 탈중앙화 거래.";
+"msg_welcome1_0" = "Do you have EOS?";
+"msg_welcome1_1" = "여러 개의 계정을 관리할 수 있고\nEOS및 토큰의 자산을 한 눈에\n확인할 수 있습니다.";
+"msg_welcome2_0" = "EOStart's Security";
+"msg_welcome2_1" = "IOS Key chain 기반으로 서버 및 단말에 \nPrivate Key를 저장하지 않아 \n강력한 보안 시스템을 제공합니다.";
+"msg_update_force" = "계속 사용하시려면 업데이트를 하셔야 합니다. \n업데이트 하시겠습니까?";
+"msg_update_suggest" = "새로운 버전이 있습니다. \n업데이트 하시겠습니까?";
+
+"back" = "뒤로";
+"skip" = "건너뛰기";
+"before" = "이전";
+"next" = "다음";
+"start" = "시작";
+"confirm" = "확인";
+"add_key" = "키 등록";
+"check_key" = "키 확인";
+"delete_account" = "계정 삭제";
+"cancel" = "취소";
+"add_key2" = "키 등록";
+"update" = "업 데이트";
+
+"language_default" = "기본값";
+"language_korean" = "한국어";
+"language_english" = "English";
+
+"currency_krw" = "KRW";
+"currency_usd" = "USD";
+"currency_btc" = "BTC";
+
+"set_account" = "계정";
+"set_currency" = "통화";
+"set_language" = "언어";
+
+"set_applock" = "앱 잠금";
+"set_touchid" = "터치 아이디";
+"set_faceid" = "페이스 아이디";
+
+"set_homepage" = "홈페이지";
+"set_telegram" = "텔레그램";
+
+"set_github" = "GitHub";
+"set_licences" = "오픈소스 라이센스";
+"set_terms" = "약관";
+
+
+"error_no_account" = "존재하지 않는 계정입니다.";
+"error_no_clipboard" = "클립보드에 저장된 글이 없습니다.";
+"error_invalid_privatekey" = "올바르지않은 Private key입니다.";
+"error_two_password_differ" = "입력하신 핀 코드가 다릅니다.";
+"error_invalid_password" = "올바른 핀 코드를 입력하세요.";
+"error_network" = "불안정한 네트워크 환경으로 서비스를 이용하실 수 없습니다.\n잠시후에 다시 이용해주세요.";
+"error_no_recent" = "최근 가록이 없습니다.";
