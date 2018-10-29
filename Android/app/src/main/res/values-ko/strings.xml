@@ -13,7 +13,8 @@
     <string name="eospark_param_trx_info">get_account_related_trx_info</string>
     <string name="eospark_param_trx_check">get_transaction_detail_info</string>
     <string name="db_pppw">wannabitgoeshere</string>
-
+    <string name="eospark_api_url">https://api.eospark.com/</string>
+    <string name="eospark_api_key">61a82849325ae02328ee47863d5bca24</string>
 
 
     <string name="str_skip">Skip</string>

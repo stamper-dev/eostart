@@ -17,6 +17,7 @@ public class ApiClient {
     private static Retrofit retrofit_cmc = null;
     private static Retrofit retrofit_wb = null;
     private static Retrofit retrofit_ep = null;
+    private static Retrofit retrofit_eosaprk_api = null;
 
     public static Retrofit getBPClient(Context c) {
         if (retrofit_bp == null) {
@@ -72,6 +73,20 @@ public class ApiClient {
             }
         }
         return retrofit_ep;
+    }
+
+    public static Retrofit getEosParkClient(Context c) {
+        if (retrofit_eosaprk_api == null) {
+            synchronized (ApiClient.class) {
+                if (retrofit_eosaprk_api == null)  {
+                    retrofit_eosaprk_api = new Retrofit.Builder()
+                            .baseUrl(c.getString(R.string.eospark_api_url))
+                            .addConverterFactory(GsonConverterFactory.create())
+                            .build();
+                }
+            }
+        }
+        return retrofit_eosaprk_api;
     }
 
 
@@ -190,4 +205,17 @@ public class ApiClient {
         return service.parkTxCheck(new ReqParkTxCheck(id, interface_name));
     }
 
+
+    /**
+     * with eospark new api
+     *
+     */
+
+    public static Call<JsonObject> getparkActions(Context c, String account_name, int page_num, int page_size, String symbol, String issue_account) {
+        EosParkService service = getEosParkClient(c).create(EosParkService.class);
+        return service.parkApiActions("account", c.getString(R.string.eospark_param_trx_info),
+                c.getString(R.string.eospark_api_key), account_name,
+                page_num, page_size,
+                symbol, issue_account);
+    }
 }

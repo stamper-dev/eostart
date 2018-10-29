@@ -40,6 +40,7 @@ import wannabit.io.eoswallet.R;
 import wannabit.io.eoswallet.base.BaseActivity;
 import wannabit.io.eoswallet.dialog.DialogRequestKey;
 import wannabit.io.eoswallet.model.WBAction;
+import wannabit.io.eoswallet.model.WBEosParkTx;
 import wannabit.io.eoswallet.model.WBRecent;
 import wannabit.io.eoswallet.model.WBToken;
 import wannabit.io.eoswallet.model.WBTransaction;
@@ -52,6 +53,7 @@ import wannabit.io.eoswallet.network.ReqCurrencyBalance;
 import wannabit.io.eoswallet.network.ReqParkAction;
 import wannabit.io.eoswallet.network.ResActions;
 import wannabit.io.eoswallet.network.ResParkAction;
+import wannabit.io.eoswallet.network.ResParkNewAction;
 import wannabit.io.eoswallet.task.ActionFetchListener;
 import wannabit.io.eoswallet.task.ActionTask;
 import wannabit.io.eoswallet.utils.WLog;
@@ -80,7 +82,7 @@ public class WalletDetailActivity extends BaseActivity implements View.OnClickLi
     private int                         mTotalSize = 0;
     private WBToken                     mWBToken;
     private WBUser                      mSelectedUser;
-    private ArrayList<WBTransaction>    mFilteredActions = new ArrayList<>();
+    private ArrayList<WBEosParkTx>      mFilteredActions = new ArrayList<>();
     private boolean                     mHasMore = false;
     private boolean                     mLoading = false;
 
@@ -226,6 +228,7 @@ public class WalletDetailActivity extends BaseActivity implements View.OnClickLi
                         } else {
                             mTokenPrice.setText(WUtil.getDisplayPriceSumStr(getBaseContext(), getBaseDao().getLastEosTic(), getBaseDao().getUserCurrencyStr(getBaseContext()), 0d));
                         }
+                        mControlLayout.setVisibility(View.VISIBLE);
 
                     } else {
                         mTokenAmount.setText(WUtil.AmountSpanFormat(getBaseContext(), "0", mWBToken));
@@ -246,7 +249,6 @@ public class WalletDetailActivity extends BaseActivity implements View.OnClickLi
     }
 
     private void onReloadTransactions() {
-        mControlLayout.setVisibility(View.GONE);
         mCurrentPage = initPage;
         onReqTransaction();
     }
@@ -254,16 +256,23 @@ public class WalletDetailActivity extends BaseActivity implements View.OnClickLi
 
     private ArrayList<WBRecent> onGetRecentList() {
         ArrayList<WBRecent> recentList = new ArrayList<>();
-        for(WBTransaction action:mFilteredActions) {
+        for(WBEosParkTx action:mFilteredActions) {
             boolean duple = false;
+            String target = "";
+            if (action.getSender().equals(mSelectedUser.getAccount())) {
+                target = action.getReceiver();
+            } else {
+                target = action.getSender();
+            }
+
             for(WBRecent inner:recentList) {
-                if(inner.getAccount().equals(action.getAnother_account())){
+                if(inner.getAccount().equals(target)){
                     duple = true;
                     break;
                 }
             }
             if(!duple)
-                recentList.add(new WBRecent(action.getAnother_account(), action.getTrx_timestamp()));
+                recentList.add(new WBRecent(target, action.getTimestamp()));
             if(recentList.size() > 4)
                 break;
         }
@@ -297,10 +306,10 @@ public class WalletDetailActivity extends BaseActivity implements View.OnClickLi
 
 
     class ActionAdapter extends RecyclerView.Adapter<ActionAdapter.ActionAdapterItemHolder> {
-        ArrayList<WBTransaction> transactions = new ArrayList<>();
+        ArrayList<WBEosParkTx> transactions = new ArrayList<>();
 
 
-        public ActionAdapter(ArrayList<WBTransaction> transactions) {
+        public ActionAdapter(ArrayList<WBEosParkTx> transactions) {
             this.transactions = transactions;
         }
 
@@ -317,11 +326,10 @@ public class WalletDetailActivity extends BaseActivity implements View.OnClickLi
 
         @Override
         public void onBindViewHolder(final ActionAdapterItemHolder holder, int position) {
-            final WBTransaction mTx = transactions.get(position);
+            final WBEosParkTx mTx = transactions.get(position);
             holder.itemActionId.setText("" + (mTotalSize - position)+"/"+mTotalSize);
-            holder.itemActionAccount.setText(mTx.getAnother_account());
-            holder.itemActionDate.setText(WUtil.getTimeformat(WalletDetailActivity.this, mTx.getTrx_timestamp()));
-            holder.itemActionTxid.setText(getString(R.string.str_txid_dash) + mTx.getHash());
+            holder.itemActionDate.setText(WUtil.getTimeformat(WalletDetailActivity.this, mTx.getTimestamp()));
+            holder.itemActionTxid.setText(getString(R.string.str_txid_dash) + mTx.getTrx_id());
             if(!TextUtils.isEmpty(mTx.getMemo())) {
                 holder.itemActionMemo.setText(getString(R.string.str_memo_dash) + mTx.getMemo());
                 holder.itemActionMemo.setVisibility(View.VISIBLE);
@@ -329,13 +337,14 @@ public class WalletDetailActivity extends BaseActivity implements View.OnClickLi
                 holder.itemActionMemo.setVisibility(View.GONE);
             }
 
-            if (mTx.getDirection().equals("out")) {
+            if (mTx.getSender().equals(mSelectedUser.getAccount())) {
+                holder.itemActionAccount.setText(mTx.getReceiver());
                 holder.itemActionType.setText(getString(R.string.str_sent));
                 holder.itemActionAmount.setTextColor(getResources().getColor(R.color.colorRed));
                 holder.itemActionAmount.setText(WUtil.AmountSpanFormat(getBaseContext(), "-"+ mTx.getQuantity(), mWBToken));
 
-
             } else {
+                holder.itemActionAccount.setText(mTx.getSender());
                 holder.itemActionType.setText(getString(R.string.str_received));
                 holder.itemActionAmount.setTextColor(getResources().getColor(R.color.colorGreen));
                 holder.itemActionAmount.setText(WUtil.AmountSpanFormat(getBaseContext(), mTx.getQuantity(), mWBToken));
@@ -366,34 +375,30 @@ public class WalletDetailActivity extends BaseActivity implements View.OnClickLi
 
     private void onReqTransaction() {
         mLoading = true;
-        ApiClient.parkActions(this, mSelectedUser.getAccount(),
-                mCurrentPage, PageCnt, getString(R.string.eospark_param_token),
-                mWBToken.getSymbol(), mWBToken.getContractAddr(),
-                getString(R.string.eospark_param_trx_info))
+        ApiClient.getparkActions(this, mSelectedUser.getAccount(),
+                mCurrentPage, PageCnt,
+                mWBToken.getSymbol(), mWBToken.getContractAddr())
                 .enqueue(new Callback<JsonObject>() {
             @Override
             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
                 if(response.isSuccessful()) {
-                    ResParkAction temp = new Gson().fromJson(response.body(), ResParkAction.class);
+                    ResParkNewAction temp = new Gson().fromJson(response.body(), ResParkNewAction.class);
                     mTotalSize = temp.getTotalCnt();
                     mTotalTxCnt.setText("" + mTotalSize);
                     if(mCurrentPage == initPage) {
                         mFilteredActions.clear();
                     }
                     mFilteredActions.addAll(temp.getFilteredTx());
-
-
                     mInitLoadingView.setVisibility(View.GONE);
+
                     if (mTotalSize == 0 || mFilteredActions.size() == 0){
                         swipeRefreshLayout.setVisibility(View.GONE);
                         mEmptyView.setVisibility(View.VISIBLE);
-                        mControlLayout.setVisibility(View.VISIBLE);
                         mSendBtn.setEnabled(false);
 
                     } else if(mTotalSize > mFilteredActions.size()) {
                         swipeRefreshLayout.setVisibility(View.VISIBLE);
                         mEmptyView.setVisibility(View.GONE);
-                        mControlLayout.setVisibility(View.VISIBLE);
                         mSendBtn.setEnabled(true);
                         mHasMore = true;
                         actionAdapter.notifyDataSetChanged();
@@ -401,7 +406,6 @@ public class WalletDetailActivity extends BaseActivity implements View.OnClickLi
                     } else {
                         swipeRefreshLayout.setVisibility(View.VISIBLE);
                         mEmptyView.setVisibility(View.GONE);
-                        mControlLayout.setVisibility(View.VISIBLE);
                         mSendBtn.setEnabled(true);
                         mHasMore = false;
                         actionAdapter.notifyDataSetChanged();
