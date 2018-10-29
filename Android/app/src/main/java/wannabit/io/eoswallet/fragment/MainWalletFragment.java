@@ -222,10 +222,7 @@ public class MainWalletFragment extends BaseFragment implements SwipeRefreshLayo
                 }
                 holder.itemClickView.setClickable(true);
             } else {
-                holder.itemAmountToken.setText("");
-                holder.itemPriceToken.setText("");
-                holder.itemClickView.setClickable(false);
-                onSetAmount(position, wbToken);
+                onSetAmount(holder, position, wbToken);
             }
 
 
@@ -248,7 +245,7 @@ public class MainWalletFragment extends BaseFragment implements SwipeRefreshLayo
         }
     }
 
-    private void onSetAmount(final int position, final WBToken wbToken) {
+    private void onSetAmount(final WalletAdapter.WalletAdapterItemHolder holder, final int position, final WBToken wbToken) {
         ApiClient.getCurrency(getBaseActivity(), wbToken.getContractAddr(), getMainActivity().getCurrentUser().getAccount(), wbToken.getSymbol()).enqueue(new Callback<List<String>>() {
             @Override
             public void onResponse(Call<List<String>> call, Response<List<String>> response) {
@@ -258,7 +255,16 @@ public class MainWalletFragment extends BaseFragment implements SwipeRefreshLayo
                     } else {
                         mTokens.get(position).setUserAmount(0d);
                     }
-                    walletAdapter.notifyItemChanged(position);
+
+                    holder.itemAmountToken.setText(WUtil.AmountSpanFormatWithoutSymbol(getBaseActivity(), mTokens.get(position).getUserAmount(), wbToken));
+                    if(wbToken.getContractAddr().equals(getString(R.string.str_eos_contract))) {
+                        holder.itemPriceToken.setText(WUtil.getDisplayPriceSumStr(getBaseActivity(), getBaseDao().getLastEosTic(), getBaseDao().getUserCurrencyStr(getBaseActivity()), wbToken.getUserAmount()));
+                    } else {
+                        holder.itemPriceToken.setText(WUtil.getDisplayPriceSumStr(getBaseActivity(), getBaseDao().getLastEosTic(), getBaseDao().getUserCurrencyStr(getBaseActivity()), 0d));
+                    }
+                    holder.itemClickView.setClickable(true);
+
+
 
                 } else {
                     //Ignore this Error
