@@ -197,6 +197,9 @@ public class WBAction {
                 @SerializedName("memo")
                 public String memo;
 
+                @SerializedName("message")
+                public String message;
+
                 @SerializedName("receiver")
                 public String receiver;
 

@@ -185,9 +185,6 @@ public class MainHistoryFragment extends BaseFragment {
                         if(temp.getActions() != null && temp.getActions().size() > 0) {
                             ArrayList<WBAction> tempActions = temp.getActions();
                             Collections.sort(tempActions, new WUtil.WBActionDescCompare());
-//                            for(WBAction action: tempActions) {
-//                                WLog.w("action : " + action.getAccount_action_seq());
-//                            }
 
                             if(tempActions.size() < pageCnt || tempActions.get(tempActions.size()-1).account_action_seq == 0) {
                                 mHasMore = false;
@@ -251,9 +248,6 @@ public class MainHistoryFragment extends BaseFragment {
                         if(temp.getActions() != null && temp.getActions().size() > 0) {
                             ArrayList<WBAction> tempActions = temp.getActions();
                             Collections.sort(tempActions, new WUtil.WBActionDescCompare());
-//                            for(WBAction action: tempActions) {
-//                                WLog.w("action : " + action.getAccount_action_seq());
-//                            }
 
                             if(tempActions.size() < pageCnt || tempActions.get(tempActions.size()-1).account_action_seq == 0) {
                                 mHasMore = false;
@@ -347,14 +341,19 @@ public class MainHistoryFragment extends BaseFragment {
                         holder.itemActionAccount.setText(data.from);
                     }
 
-                }  else if(!TextUtils.isEmpty(actName)){
+                } else if(!TextUtils.isEmpty(actName)){
                     holder.itemActionType.setText(actName);
                     holder.itemActionAmount.setText("");
-                    holder.itemActionAccount.setText("");
-                    if (data.from.equals(userAccount)) {
-                        holder.itemActionAccount.setText(data.to);
+
+                    if(action.action_trace.act.account != null) {
+                        holder.itemActionAccount.setText(action.action_trace.act.account);
+                    }
+
+                    if(data.message != null) {
+                        holder.itemActionMemo.setText(getString(R.string.str_memo_dash) + data.message);
+                        holder.itemActionMemo.setVisibility(View.VISIBLE);
                     } else {
-                        holder.itemActionAccount.setText(data.from);
+                        holder.itemActionMemo.setVisibility(View.GONE);
                     }
                 } else {
                     holder.itemActionType.setText("ETC");
