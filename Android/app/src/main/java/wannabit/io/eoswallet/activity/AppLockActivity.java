@@ -81,6 +81,7 @@ public class AppLockActivity extends BaseActivity implements PasscodeListener {
             onCancelResult();
         } else if (mType == LockType.Lock) {
             onGiveUpResult();
+            return;
         } else if (mType == LockType.Disable) {
             onCancelResult();
         }
@@ -94,7 +95,10 @@ public class AppLockActivity extends BaseActivity implements PasscodeListener {
     }
 
     private void onGiveUpResult() {
-        moveTaskToBack(true);
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        startActivity(intent);
     }
 
     private void onCancelResult() {
