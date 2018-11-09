@@ -229,6 +229,7 @@ public class WalletDetailActivity extends BaseActivity implements View.OnClickLi
                             mTokenPrice.setText(WUtil.getDisplayPriceSumStr(getBaseContext(), getBaseDao().getLastEosTic(), getBaseDao().getUserCurrencyStr(getBaseContext()), 0d));
                         }
                         mControlLayout.setVisibility(View.VISIBLE);
+                        mSendBtn.setEnabled(true);
 
                     } else {
                         mTokenAmount.setText(WUtil.AmountSpanFormat(getBaseContext(), "0", mWBToken));
@@ -394,19 +395,16 @@ public class WalletDetailActivity extends BaseActivity implements View.OnClickLi
                     if (mTotalSize == 0 || mFilteredActions.size() == 0){
                         swipeRefreshLayout.setVisibility(View.GONE);
                         mEmptyView.setVisibility(View.VISIBLE);
-                        mSendBtn.setEnabled(false);
 
                     } else if(mTotalSize > mFilteredActions.size()) {
                         swipeRefreshLayout.setVisibility(View.VISIBLE);
                         mEmptyView.setVisibility(View.GONE);
-                        mSendBtn.setEnabled(true);
                         mHasMore = true;
                         actionAdapter.notifyDataSetChanged();
 
                     } else {
                         swipeRefreshLayout.setVisibility(View.VISIBLE);
                         mEmptyView.setVisibility(View.GONE);
-                        mSendBtn.setEnabled(true);
                         mHasMore = false;
                         actionAdapter.notifyDataSetChanged();
                     }
