@@ -350,8 +350,14 @@ class AppUtils {
     
     static func getActionMemo(_ input : NSDictionary) -> String {
         var result: String = ""
-        if let memo = input.value(forKeyPath: "action_trace.act.data.memo") as? String{
-            result = memo
+        guard let data = input.value(forKeyPath: "action_trace.act.data") else{
+            return result
+        }
+        
+        if (data is NSDictionary) {
+            if let memo = input.value(forKeyPath: "action_trace.act.data.memo") as? String {
+                result = memo
+            }
         }
         return result
     }
@@ -399,9 +405,16 @@ class AppUtils {
     }
     
     static func getActionActMessage(_ input : NSDictionary) -> String {
+        
         var result: String = ""
-        if let message = input.value(forKeyPath: "action_trace.act.data.message") as? String{
-            result = message
+        guard let data = input.value(forKeyPath: "action_trace.act.data") else {
+            return result
+        }
+        
+        if (data is NSDictionary) {
+            if let message = input.value(forKeyPath: "action_trace.act.data.message") as? String{
+                result = message
+            }
         }
         return result
     }

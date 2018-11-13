@@ -174,20 +174,20 @@ class MainTabHistoryViewController: BaseViewController, UITableViewDelegate, UIT
                 cell?.amountLabel.textColor = UIColor(hexString: "#FF5656")
                 cell?.amountLabel.text = "- " + AppUtils.getActionQuantity(history)
                 cell?.otherUserLabel.text = AppUtils.getActionTo(history)
-                
+
             } else if (AppUtils.getActionTo(history) == user?.user_account) {
                 cell?.typeLabel.text = "Received"
                 cell?.amountLabel.textColor = UIColor(hexString: "#00CF1C")
                 cell?.amountLabel.text = AppUtils.getActionQuantity(history)
                 cell?.otherUserLabel.text = AppUtils.getActionName(history)
             }
-            
+
         } else if (AppUtils.getActionName(history).count > 0) {
             cell?.typeLabel.text = AppUtils.getActionName(history)
             cell?.amountLabel.text = ""
             cell?.memoLabel.text = AppUtils.getActionActMessage(history)
             cell?.otherUserLabel.text = AppUtils.getActionActAccount(history)
-            
+
         } else {
             cell?.typeLabel.text = "ETC"
             cell?.amountLabel.text = ""

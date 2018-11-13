@@ -52,6 +52,8 @@ class IntroViewController: UIViewController {
                 let latestVersion = response.object(forKey: "latestVersion") as! Int
                 let localVersion = Int(Bundle.main.infoDictionary!["CFBundleVersion"] as! String)!
                 
+//                print("acceptableVersion ", acceptableVersion , "  latestVersion" , latestVersion, "  localVersion", localVersion)
+                
                 if(localVersion < acceptableVersion) {
                     let alertController = UIAlertController(title: "update".localized(), message: "msg_update_force".localized(), preferredStyle: UIAlertControllerStyle.alert)
                     let cancelAction = UIAlertAction(title: "cancel".localized(), style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in

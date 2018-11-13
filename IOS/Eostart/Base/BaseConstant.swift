@@ -15,6 +15,8 @@ let WANNABIT_PRUD_URL           = "https://wallet-api.wannabit.io/";
 let BP_URL                      = "https://eos.greymass.com:443/";
 let COIN_MARKET_CAP_URL         = "https://api.coinmarketcap.com/";
 let EOS_PARK_URL                = "https://eospark.com/";
+let EOS_PARK_API_URL            = "https://api.eospark.com/";
+let EOS_PARK_API_KEY            = "61a82849325ae02328ee47863d5bca24";
 
 
 let URL_PATH_VERSION_CHECK      = WANNABIT_PRUD_URL + "app/version/ios";
@@ -36,7 +38,7 @@ let URL_EOS_TIC                 = COIN_MARKET_CAP_URL + "v2/ticker/";
 
 
 let URL_PATH_PARK_ACTIONS       = EOS_PARK_URL + "interface_main";
-
+let URL_PATH_PARK_ACTIONS2      = EOS_PARK_API_URL + "api/";
 
 
 

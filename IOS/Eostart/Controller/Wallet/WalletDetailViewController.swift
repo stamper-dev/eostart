@@ -153,23 +153,23 @@ class WalletDetailViewController: BaseViewController, UITableViewDelegate, UITab
         let tx = transactions[indexPath.row]
         let cell:TransactionViewCell? = tableView.dequeueReusableCell(withIdentifier:"TransactionViewCell") as? TransactionViewCell
         
-        cell?.countLabel.text = String(totalSize + 1 - indexPath.row) + " / " + String(totalSize + 1)
-        cell?.otherUserLabel.text = tx.object(forKey: "another_account") as? String
-        cell?.dateLabel.text = AppUtils.changeTimeFormat(input: tx.object(forKey: "trx_timestamp") as! String)
-        cell?.txidLabel.text = tx.object(forKey: "hash") as? String
+        cell?.countLabel.text = String(totalSize - indexPath.row) + " / " + String(totalSize)
+        cell?.dateLabel.text = AppUtils.changeTimeFormat(input: tx.object(forKey: "timestamp") as! String)
+        cell?.txidLabel.text = tx.object(forKey: "trx_id") as? String
         cell?.memoLabel.text = tx.object(forKey: "memo") as? String
         
-        let type = tx.object(forKey: "direction") as? String
-        if(type == "out") {
+        let sender = tx.object(forKey: "sender") as? String
+        if(sender == user?.user_account) {
+            cell?.otherUserLabel.text = tx.object(forKey: "receiver") as? String
             cell?.typeLabel.text = "Sent"
             cell?.amountLabel.textColor = UIColor(hexString: "#FF5656")
             cell?.amountLabel.text = "- " + (tx.object(forKey: "quantity") as! String) + " " + (tx.object(forKey: "symbol") as! String)
         } else {
+            cell?.otherUserLabel.text = tx.object(forKey: "sender") as? String
             cell?.typeLabel.text = "Received"
             cell?.amountLabel.textColor = UIColor(hexString: "#00CF1C")
             cell?.amountLabel.text = tx.object(forKey: "quantity") as! String + " " + (tx.object(forKey: "symbol") as! String)
         }
-        
         return cell!
     }
     
@@ -186,17 +186,17 @@ class WalletDetailViewController: BaseViewController, UITableViewDelegate, UITab
     
     
     func reqTransaction() {
-        print("reqTransaction ", cPage, token?.token_symbol, token?.token_contractAddr);
         self.loading = true
         self.hasMore = false
+        let parameters: Parameters = ["module": "account", "action": "get_account_related_trx_info",
+                                      "apikey": EOS_PARK_API_KEY, "account": user!.user_account,
+                                      "page": cPage, "size": PageCnt,
+                                      "symbol": token!.token_symbol, "code": token!.token_contractAddr]
         
-        let parameters: Parameters = ["account_name": user?.user_account, "page_num": cPage, "page_size": PageCnt,
-                                      "tab_name": "token", "symbol": token?.token_symbol, "issue_account": token?.token_contractAddr,
-                                      "interface_name": "get_account_related_trx_info", "hide_small_quantity": 0]
-        let request = Alamofire.request(URL_PATH_PARK_ACTIONS,
-                                        method: .post,
+        let request = Alamofire.request(URL_PATH_PARK_ACTIONS2,
+                                        method: .get,
                                         parameters: parameters,
-                                        encoding: JSONEncoding.default)
+                                        encoding: URLEncoding.default)
         
         request.responseJSON { (response) in
             if let status = response.response?.statusCode {
@@ -210,36 +210,36 @@ class WalletDetailViewController: BaseViewController, UITableViewDelegate, UITab
                 }
                 
                 if let result = (response.result.value as? NSDictionary)?.object(forKey: "data") as?  NSDictionary {
-                    self.totalSize = result.object(forKey: "num_of_token_transactions") as? Int ?? 0
+                    self.totalSize = result.object(forKey: "trace_count") as? Int ?? 0
                     UIView.performWithoutAnimation {
                         self.mainTableView.beginUpdates()
                         self.mainTableView.reloadSections(IndexSet(1..<2), with: UITableViewRowAnimation.none)
                         self.mainTableView.endUpdates()
                     }
-                
-                    let txs = result.object(forKey: "token_transactions") as? Array<NSDictionary>
+
+                    let txs = result.object(forKey: "trace_list") as? Array<NSDictionary>
                     if (self.cPage == self.PageInit) {
                         self.transactions.removeAll()
                     }
                     self.transactions.append(contentsOf: txs!)
-                    
+
                     if(self.totalSize > self.transactions.count && txs?.count == self.PageCnt) {
                         self.hasMore = true
                     }
-                    
+
                     if (self.transactions.count > 0) {
-                       self.mainTableView.reloadData()
-                        
+                        self.mainTableView.reloadData()
+
                     } else {
                         self.noneHistoryView.isHidden = false
                     }
-                    
 
-                    
+
+
                 } else {
                     self.hasMore = false
                 }
-                
+
                 self.loading = false
             }
         }
