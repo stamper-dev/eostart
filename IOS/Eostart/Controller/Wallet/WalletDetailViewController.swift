@@ -248,12 +248,16 @@ class WalletDetailViewController: BaseViewController, UITableViewDelegate, UITab
     func getRecentList() -> Array<String> {
         var result = Array<String>()
         for tx in self.transactions {
-            guard let other = tx.object(forKey: "another_account") as? String  else {
-                continue
-            }
-            
-            if(!result.contains(other)) {
-                result.append(other)
+            let sender = tx.object(forKey: "sender") as? String
+            let receiver = tx.object(forKey: "receiver") as? String
+            if(sender == user?.user_account) {
+                if(!result.contains(receiver!)) {
+                    result.append(receiver!)
+                }
+            } else {
+                if(!result.contains(sender!)) {
+                    result.append(sender!)
+                }
             }
             if(result.count > 4) {
                 break
