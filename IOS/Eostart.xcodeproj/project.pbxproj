@@ -1254,9 +1254,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 699MQ7BZ27;
+				DEVELOPMENT_TEAM = 8G562MW56M;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Eostart/Eos/Libraries/include\"";
 				INFOPLIST_FILE = Eostart/Base/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1265,7 +1266,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/yongjoo/Documents/wannabit_eostart_open/eostart/IOS/Eostart/Eos/Libraries/include/Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1275,9 +1276,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 699MQ7BZ27;
+				DEVELOPMENT_TEAM = 8G562MW56M;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Eostart/Eos/Libraries/include\"";
 				INFOPLIST_FILE = Eostart/Base/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1286,7 +1288,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/yongjoo/Documents/wannabit_eostart_open/eostart/IOS/Eostart/Eos/Libraries/include/Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
