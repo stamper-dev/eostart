@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class CreateAccountViewController: BaseViewController {
 
@@ -19,14 +20,9 @@ class CreateAccountViewController: BaseViewController {
         self.navigationController?.pushViewController(addAccountVc, animated: true)
     }
     @IBAction func createAccountClicked(_ sender: UIButton) {
-        guard let url = URL(string: "http://www.eostart.com") else {
-            return
-        }
-        if #available(iOS 10.0, *) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        } else {
-            UIApplication.shared.openURL(url)
-        }
+        guard let url = URL(string: "https://eostart.com") else { return }
+        let safariViewController = SFSafariViewController(url: url)
+        present(safariViewController, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

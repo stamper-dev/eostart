@@ -115,6 +115,35 @@
             </objects>
             <point key="canvasLocation" x="3176.8000000000002" y="1083.5082458770617"/>
         </scene>
+        <!--Web View Controller-->
+        <scene sceneID="2nd-tc-C1i">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="8yC-RP-Eqq" customClass="WebViewController" customModule="Eostart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qJs-Jz-KKR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s7K-ZY-6fc">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.24705882352941178" green="0.28235294117647058" blue="0.38823529411764707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="2M4-XE-Bhb"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="s7K-ZY-6fc" id="OED-QQ-sFg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7PY-pA-Cut" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3184.8000000000002" y="1874.2128935532235"/>
+        </scene>
         <!--Add Key View Controller-->
         <scene sceneID="dnX-VK-J3w">
             <objects>

@@ -97,6 +97,7 @@
 		E1BA7C592140DAF8001C5568 /* TestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1BA7C572140DAF8001C5568 /* TestTableViewCell.xib */; };
 		E1BA7C5C2140E58C001C5568 /* HistoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7C5A2140E58C001C5568 /* HistoryViewCell.swift */; };
 		E1BA7C5D2140E58C001C5568 /* HistoryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1BA7C5B2140E58C001C5568 /* HistoryViewCell.xib */; };
+		E1BC431921AFC1100086F723 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BC431821AFC1100086F723 /* WebViewController.swift */; };
 		E1C3221721631F62001A5436 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C3221621631F62001A5436 /* InputTextField.swift */; };
 		E1C322192163305A001A5436 /* BottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C322182163305A001A5436 /* BottomButton.swift */; };
 		E1C3221B21649C45001A5436 /* AddKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C3221A21649C45001A5436 /* AddKeyViewController.swift */; };
@@ -249,6 +250,7 @@
 		E1BA7C572140DAF8001C5568 /* TestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestTableViewCell.xib; sourceTree = "<group>"; };
 		E1BA7C5A2140E58C001C5568 /* HistoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewCell.swift; sourceTree = "<group>"; };
 		E1BA7C5B2140E58C001C5568 /* HistoryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryViewCell.xib; sourceTree = "<group>"; };
+		E1BC431821AFC1100086F723 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		E1C3221621631F62001A5436 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		E1C322182163305A001A5436 /* BottomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButton.swift; sourceTree = "<group>"; };
 		E1C3221A21649C45001A5436 /* AddKeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddKeyViewController.swift; sourceTree = "<group>"; };
@@ -714,6 +716,7 @@
 				E17C438C217727B200731B82 /* WelcomeViewController.swift */,
 				E17C438A21771F3300731B82 /* WelcomePageViewController.swift */,
 				E17C438E21773D2600731B82 /* CreateAccountViewController.swift */,
+				E1BC431821AFC1100086F723 /* WebViewController.swift */,
 			);
 			path = Init;
 			sourceTree = "<group>";
@@ -997,6 +1000,7 @@
 				E16CF4582159263E00E456E5 /* SEWallet.swift in Sources */,
 				E17C439621786CA600731B82 /* AppLockSetViewController.swift in Sources */,
 				E1923C8A213C132E0002AAFF /* Token.swift in Sources */,
+				E1BC431921AFC1100086F723 /* WebViewController.swift in Sources */,
 				E13BC901216A54240056370A /* PopupAccountViewCell.swift in Sources */,
 				E17C438F21773D2600731B82 /* CreateAccountViewController.swift in Sources */,
 				E16CF44A2159263E00E456E5 /* Currency.swift in Sources */,
@@ -1262,7 +1266,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.wannabit.Eostart;
+				PRODUCT_BUNDLE_IDENTIFIER = io.wannabit.Eostarts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/yongjoo/Documents/wannabit_eostart_open/eostart/IOS/Eostart/Eos/Libraries/include/Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -1284,7 +1288,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.wannabit.Eostart;
+				PRODUCT_BUNDLE_IDENTIFIER = io.wannabit.Eostarts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/yongjoo/Documents/wannabit_eostart_open/eostart/IOS/Eostart/Eos/Libraries/include/Bridging-Header.h";
 				SWIFT_VERSION = 4.0;

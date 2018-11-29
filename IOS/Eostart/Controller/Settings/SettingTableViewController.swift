@@ -8,6 +8,7 @@
 
 import UIKit
 import LocalAuthentication
+import SafariServices
 
 class SettingTableViewController: UITableViewController {
 
@@ -136,67 +137,38 @@ class SettingTableViewController: UITableViewController {
             
         } else if(indexPath.section == 2) {
             if(indexPath.row == 0) {
-                guard let url = URL(string: "https://wannabit.io/") else {
-                    return
-                }
-                if #available(iOS 10.0, *) {
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                } else {
-                    UIApplication.shared.openURL(url)
-                }
+                guard let url = URL(string: "https://wannabit.io/") else { return }
+                let safariViewController = SFSafariViewController(url: url)
+                present(safariViewController, animated: true, completion: nil)
                 
             } else if (indexPath.row == 1) {
-                guard let url = URL(string: "https://t.me/joinchat/GTBI4UYr1-JkQRc7OwtvWA") else {
-                    return
-                }
-                if #available(iOS 10.0, *) {
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                } else {
-                    UIApplication.shared.openURL(url)
-                }
+                guard let url = URL(string: "https://t.me/joinchat/GTBI4UYr1-JkQRc7OwtvWA") else { return }
+                let safariViewController = SFSafariViewController(url: url)
+                present(safariViewController, animated: true, completion: nil)
                 
             }
             
         } else if(indexPath.section == 3) {
             if(indexPath.row == 0) {
-//                guard let url = URL(string: "https://wannabit.io/") else {
-//                    return
-//                }
-//                if #available(iOS 10.0, *) {
-//                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-//                } else {
-//                    UIApplication.shared.openURL(url)
-//                }
+//                guard let url = URL(string: "https://wannabit.io/") else { return }
+//                let safariViewController = SFSafariViewController(url: url)
+//                present(safariViewController, animated: true, completion: nil)
                 
             } else if (indexPath.row == 1) {
-//                guard let url = URL(string: "https://t.me/joinchat/GTBI4UYr1-JkQRc7OwtvWA") else {
-//                    return
-//                }
-//                if #available(iOS 10.0, *) {
-//                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-//                } else {
-//                    UIApplication.shared.openURL(url)
-//                }
+//                guard let url = URL(string: "https://t.me/joinchat/GTBI4UYr1-JkQRc7OwtvWA") else { return }
+//                let safariViewController = SFSafariViewController(url: url)
+//                present(safariViewController, animated: true, completion: nil)
                 
             } else if(indexPath.row == 2) {
                 if(BaseDao.instance.getUserLangauageS() == "ko") {
-                    guard let url = URL(string: "https://eostart.com/policy_ko") else {
-                        return
-                    }
-                    if #available(iOS 10.0, *) {
-                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                    } else {
-                        UIApplication.shared.openURL(url)
-                    }
+                    guard let url = URL(string: "https://eostart.com/policy_ko") else { return }
+                    let safariViewController = SFSafariViewController(url: url)
+                    present(safariViewController, animated: true, completion: nil)
+                    
                 } else {
-                    guard let url = URL(string: "https://eostart.com/policy_en") else {
-                        return
-                    }
-                    if #available(iOS 10.0, *) {
-                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                    } else {
-                        UIApplication.shared.openURL(url)
-                    }
+                    guard let url = URL(string: "https://eostart.com/policy_en") else { return }
+                    let safariViewController = SFSafariViewController(url: url)
+                    present(safariViewController, animated: true, completion: nil)
                 }
             }
             

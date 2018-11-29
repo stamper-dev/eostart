@@ -101,8 +101,5 @@ class WelcomeViewController: UIViewController, WelcomePageViewControllerDelegate
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window?.rootViewController = createVc
         self.present(createVc, animated: true, completion: nil)
-        
-        
-        
     }
 }

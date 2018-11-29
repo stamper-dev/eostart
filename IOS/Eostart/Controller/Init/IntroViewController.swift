@@ -54,33 +54,33 @@ class IntroViewController: UIViewController {
                 
 //                print("acceptableVersion ", acceptableVersion , "  latestVersion" , latestVersion, "  localVersion", localVersion)
                 
-                if(localVersion < acceptableVersion) {
-                    let alertController = UIAlertController(title: "update".localized(), message: "msg_update_force".localized(), preferredStyle: UIAlertControllerStyle.alert)
-                    let cancelAction = UIAlertAction(title: "cancel".localized(), style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
-                        exit(0)
-                    }
-                    let okAction = UIAlertAction(title: "update".localized(), style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                        self.update()
-                    }
-                    alertController.addAction(cancelAction)
-                    alertController.addAction(okAction)
-                    self.present(alertController, animated: true, completion: nil)
-                    
-                } else if(localVersion < latestVersion) {
-                    let alertController = UIAlertController(title: "update".localized(), message: "msg_update_suggest".localized(), preferredStyle: UIAlertControllerStyle.alert)
-                    let cancelAction = UIAlertAction(title: "cancel".localized(), style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
-                        self.reqTokenList();
-                    }
-                    let okAction = UIAlertAction(title: "update".localized(), style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
-                        self.update()
-                    }
-                    alertController.addAction(cancelAction)
-                    alertController.addAction(okAction)
-                    self.present(alertController, animated: true, completion: nil)
-                    
-                } else {
+//                if(localVersion < acceptableVersion) {
+//                    let alertController = UIAlertController(title: "update".localized(), message: "msg_update_force".localized(), preferredStyle: UIAlertControllerStyle.alert)
+//                    let cancelAction = UIAlertAction(title: "cancel".localized(), style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+//                        exit(0)
+//                    }
+//                    let okAction = UIAlertAction(title: "update".localized(), style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+//                        //TOOD market link
+//                    }
+//                    alertController.addAction(cancelAction)
+//                    alertController.addAction(okAction)
+//                    self.present(alertController, animated: true, completion: nil)
+//
+//                } else if(localVersion < latestVersion) {
+//                    let alertController = UIAlertController(title: "update".localized(), message: "msg_update_suggest".localized(), preferredStyle: UIAlertControllerStyle.alert)
+//                    let cancelAction = UIAlertAction(title: "cancel".localized(), style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+//                        self.reqTokenList();
+//                    }
+//                    let okAction = UIAlertAction(title: "update".localized(), style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+//                        //TOOD market link
+//                    }
+//                    alertController.addAction(cancelAction)
+//                    alertController.addAction(okAction)
+//                    self.present(alertController, animated: true, completion: nil)
+//
+//                } else {
                     self.reqTokenList();
-                }
+//                }
                 
                 
                 
@@ -131,18 +131,6 @@ class IntroViewController: UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window?.rootViewController = mainTabVC
         self.present(mainTabVC, animated: true, completion: nil)
-    }
-    
-    
-    func update() {
-        guard let url = URL(string: "") else {
-            return
-        }
-        if #available(iOS 10.0, *) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        } else {
-            UIApplication.shared.openURL(url)
-        }
     }
     
 }
