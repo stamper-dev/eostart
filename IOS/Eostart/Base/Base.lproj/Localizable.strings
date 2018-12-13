@@ -38,6 +38,7 @@
 "msg_welcome2_1" = "Most secure multi-asset bloackchain wallet that\nyou can bring everywhere you go.";
 "msg_update_force" = "Update required to continue using application. \nWould you like to update the application?";
 "msg_update_suggest" = "New version available. \nWould you like to update the application?";
+"msg_preparing" = "Preparing now.";
 
 "back" = "Back";
 "skip" = "Skip";

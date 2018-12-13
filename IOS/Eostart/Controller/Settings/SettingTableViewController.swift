@@ -9,6 +9,7 @@
 import UIKit
 import LocalAuthentication
 import SafariServices
+import Toaster
 
 class SettingTableViewController: UITableViewController {
 
@@ -142,7 +143,7 @@ class SettingTableViewController: UITableViewController {
                 present(safariViewController, animated: true, completion: nil)
                 
             } else if (indexPath.row == 1) {
-                guard let url = URL(string: "https://t.me/joinchat/GTBI4UYr1-JkQRc7OwtvWA") else { return }
+                guard let url = URL(string: "https://t.me/wannabitlabs") else { return }
                 let safariViewController = SFSafariViewController(url: url)
                 present(safariViewController, animated: true, completion: nil)
                 
@@ -153,6 +154,7 @@ class SettingTableViewController: UITableViewController {
 //                guard let url = URL(string: "https://wannabit.io/") else { return }
 //                let safariViewController = SFSafariViewController(url: url)
 //                present(safariViewController, animated: true, completion: nil)
+                Toast(text: "msg_preparing".localized(), duration: Delay.short).show()
                 
             } else if (indexPath.row == 1) {
 //                guard let url = URL(string: "https://t.me/joinchat/GTBI4UYr1-JkQRc7OwtvWA") else { return }
@@ -183,6 +185,8 @@ class SettingTableViewController: UITableViewController {
             } else {
                 return 50
             }
+        } else if(indexPath.section == 3 && indexPath.row == 1) {
+            return 0
         }
         return super.tableView(tableView, heightForRowAt: indexPath)
     }

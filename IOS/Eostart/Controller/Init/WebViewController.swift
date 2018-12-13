@@ -22,6 +22,7 @@ class WebViewController: BaseViewController, WKNavigationDelegate, WKUIDelegate{
         let urlReq:URLRequest = URLRequest(url: url)
         webView.navigationDelegate = self
         webView.uiDelegate = self;
+        webView.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/11.0.1 Safari/604.3.5";
         webView.load(urlReq);
     }
     
