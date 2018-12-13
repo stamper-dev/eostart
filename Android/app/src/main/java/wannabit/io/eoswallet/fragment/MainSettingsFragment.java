@@ -163,7 +163,7 @@ public class MainSettingsFragment extends BaseFragment implements View.OnClickLi
             startActivity(intent);
 
         } else if (view.equals(mBinding.setTellegram)) {
-            Intent telegram = new Intent(Intent.ACTION_VIEW , Uri.parse("https://t.me/joinchat/GTBI4UYr1-JkQRc7OwtvWA"));
+            Intent telegram = new Intent(Intent.ACTION_VIEW , Uri.parse("https://t.me/wannabitlabs"));
             startActivity(telegram);
 
         } else if (view.equals(mBinding.setTerms)) {

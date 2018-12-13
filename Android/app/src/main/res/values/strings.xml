@@ -3,7 +3,8 @@
 
 
     <!--<string name="bp_base_url">https://api.eosnewyork.io:443</string>-->
-    <string name="bp_base_url">https://eos.greymass.com:443</string>
+    <!--<string name="bp_base_url">https://eos.greymass.com:443</string>-->
+    <string name="bp_base_url">https://api.eosnewyork.io</string>
     <string name="coinmarketcap_url">https://api.coinmarketcap.com/</string>
     <string name="eospark_url">https://eospark.com/</string>
     <string name="wannabit_test_url">https://wallet-api-dev.wannabit.io/</string>
