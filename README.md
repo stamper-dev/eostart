@@ -33,7 +33,7 @@ User experience focus was also a main part of Eostart creation process.
 
 [Android](https://play.google.com/store/apps/details?id=wannabit.io.eoswallet)
 
-[iOS](upcoming) - upcoming soon
+[iOS](https://itunes.apple.com/kr/app/eostart-wallet-for-eos/id1444837798)
 
 ## Roadmap
 
