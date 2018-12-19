@@ -104,7 +104,7 @@ class MainTabWalletViewController: BaseViewController, UITableViewDelegate, UITa
         }
         self.titleView.addGestureRecognizer(UITapGestureRecognizer(target: self, action:  #selector(self.titleAccountClick)))
         dropDown.anchorView = self.titleLayer
-        dropDown.dismissMode = .automatic
+        dropDown.dismissMode = .onTap
         dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
         dropDown.dataSource = dropmenu
         
@@ -129,12 +129,13 @@ class MainTabWalletViewController: BaseViewController, UITableViewDelegate, UITa
             }
         }
         
-        dropDown.cancelAction = { [unowned self] in
-            self.dimView?.removeFromSuperview()
-        }
         
         dropDown.willShowAction = { [unowned self] in
             self.window.addSubview(self.dimView!);
+        }
+        
+        dropDown.cancelAction = { [unowned self] in
+            self.dimView?.removeFromSuperview()
         }
         
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in

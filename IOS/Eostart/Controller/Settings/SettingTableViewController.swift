@@ -143,23 +143,40 @@ class SettingTableViewController: UITableViewController {
                 present(safariViewController, animated: true, completion: nil)
                 
             } else if (indexPath.row == 1) {
-                guard let url = URL(string: "https://t.me/wannabitlabs") else { return }
-                let safariViewController = SFSafariViewController(url: url)
-                present(safariViewController, animated: true, completion: nil)
+                let url = URL(string: "tg://resolve?domain=wannabitlabs")
+                if(UIApplication.shared.canOpenURL(url!))
+                {
+                    UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+                }else
+                {
+                    let alert = UIAlertController(title: "Error", message: "you don't have telegram,\nyou need to install telegram", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "Download And Install", style: .default, handler: { (UIAlertAction) in
+                        let urlAppStore = URL(string: "itms-apps://itunes.apple.com/app/id686449807")
+                        if(UIApplication.shared.canOpenURL(urlAppStore!))
+                        {
+                            UIApplication.shared.open(urlAppStore!, options: [:], completionHandler: nil)
+                        }
+                        
+                    })
+                    let actionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                    alert.addAction(action)
+                    alert.addAction(actionCancel)
+                    self.present(alert, animated: true, completion: nil)
+                    
+                    
+                    
+                    
+                }
                 
             }
             
         } else if(indexPath.section == 3) {
             if(indexPath.row == 0) {
-//                guard let url = URL(string: "https://wannabit.io/") else { return }
-//                let safariViewController = SFSafariViewController(url: url)
-//                present(safariViewController, animated: true, completion: nil)
-                Toast(text: "msg_preparing".localized(), duration: Delay.short).show()
+                guard let url = URL(string: "https://github.com/wannabit-dev/eostart") else { return }
+                let safariViewController = SFSafariViewController(url: url)
+                present(safariViewController, animated: true, completion: nil)
                 
             } else if (indexPath.row == 1) {
-//                guard let url = URL(string: "https://t.me/joinchat/GTBI4UYr1-JkQRc7OwtvWA") else { return }
-//                let safariViewController = SFSafariViewController(url: url)
-//                present(safariViewController, animated: true, completion: nil)
                 
             } else if(indexPath.row == 2) {
                 if(BaseDao.instance.getUserLangauageS() == "ko") {

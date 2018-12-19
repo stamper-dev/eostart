@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import DropDown
 import Toaster
+import SafariServices
 
 class MainTabHistoryViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -94,7 +95,7 @@ class MainTabHistoryViewController: BaseViewController, UITableViewDelegate, UIT
         }
         self.titleView.addGestureRecognizer(UITapGestureRecognizer(target: self, action:  #selector(self.titleAccountClick)))
         dropDown.anchorView = self.titleLayer
-        dropDown.dismissMode = .automatic
+        dropDown.dismissMode = .onTap
         dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
         dropDown.dataSource = dropmenu
         
@@ -119,12 +120,13 @@ class MainTabHistoryViewController: BaseViewController, UITableViewDelegate, UIT
             }
         }
         
-        dropDown.cancelAction = { [unowned self] in
-            self.dimView?.removeFromSuperview()
-        }
         
         dropDown.willShowAction = { [unowned self] in
             self.window.addSubview(self.dimView!);
+        }
+        
+        dropDown.cancelAction = { [unowned self] in
+            self.dimView?.removeFromSuperview()
         }
         
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
@@ -214,6 +216,13 @@ class MainTabHistoryViewController: BaseViewController, UITableViewDelegate, UIT
             }
             self.onRequestActionsMore(userId: (self.user?.user_account)!, startOffset: newStartoffset, offset: newOffset)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let history = histories[indexPath.row]
+        guard let url = URL(string: "https://eospark.com/tx/" + AppUtils.getActionTxid(history)) else { return }
+        let safariViewController = SFSafariViewController(url: url)
+        present(safariViewController, animated: true, completion: nil)
     }
     
     func onRequestActionsInit(userId: String) {
@@ -306,4 +315,5 @@ class MainTabHistoryViewController: BaseViewController, UITableViewDelegate, UIT
         }
         
     }
+    
 }

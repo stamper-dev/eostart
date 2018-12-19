@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import AlamofireImage
 import Toaster
+import SafariServices
 
 class WalletDetailViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -183,6 +184,13 @@ class WalletDetailViewController: BaseViewController, UITableViewDelegate, UITab
 //        print("lastItem ", lastItem ,"indexPath.section ", indexPath.section , "  " , "indexPath.row", indexPath.row, "  " , "hasMore", hasMore, "   loading", loading)
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let tx = transactions[indexPath.row]
+        guard let url = URL(string: "https://eospark.com/tx/" + (tx.object(forKey: "trx_id") as! String)) else { return }
+        let safariViewController = SFSafariViewController(url: url)
+        present(safariViewController, animated: true, completion: nil)
+    }
     
     
     func reqTransaction() {

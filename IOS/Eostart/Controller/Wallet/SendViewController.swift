@@ -126,7 +126,6 @@ class SendViewController: BaseViewController, UITextFieldDelegate{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         self.navigationItem.title = "Send"
     }
