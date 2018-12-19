@@ -170,9 +170,8 @@ public class MainSettingsFragment extends BaseFragment implements View.OnClickLi
             onShowTerms();
 
         } else if (view.equals(mBinding.setGithub)) {
-//            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/wannabit-dev/eostart"));
-//            startActivity(intent);
-            Toast.makeText(getBaseActivity(), "preparing now", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/wannabit-dev/eostart"));
+            startActivity(intent);
 
         } else if (view.equals(mBinding.setOpenSrc)) {
             startActivity(new Intent(getContext(), LicenseActivity.class));

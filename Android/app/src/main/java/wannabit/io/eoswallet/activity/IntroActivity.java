@@ -93,8 +93,6 @@ public class IntroActivity extends BaseActivity {
         ApiClient.getVersion(this).enqueue(new Callback<JsonObject>() {
             @Override
             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
-                WLog.w("response : " + response.body());
-                WLog.w("response : " + response.errorBody());
                 if(response.isSuccessful()) {
                     ResVersion res = new Gson().fromJson(response.body(), ResVersion.class);
                     int versionCode = BuildConfig.VERSION_CODE;
