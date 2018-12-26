@@ -82,7 +82,7 @@ Facebbok: https://www.facebook.com/wannabitlabs/
     THE SOFTWARE.
     
     
-## Reffernce(Andoird)
+## Refernce(Andoird)
 
     EosCommander
     https://github.com/playerone-id/EosCommander
