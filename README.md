@@ -56,57 +56,49 @@ Twitter: https://twitter.com/wannabitwallet
 Facebbok: https://www.facebook.com/wannabitlabs/
 
 
-
-## License
-
-    Copyright (c) 2017-2018 PlayerOne.
-
-    The MIT License
-
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be included in
-    all copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-    THE SOFTWARE.
-    
     
 ## Refernce(Andoird)
 
-    EosCommander
-    https://github.com/playerone-id/EosCommander
+  EosCommander https://github.com/playerone-id/EosCommander
 
-    PocketEOS
-    https://github.com/OracleChain/PocketEOS-Android
+  PocketEOS https://github.com/OracleChain/PocketEOS-Android
 
-    Guava
-    https://github.com/google/guava
+  Guava https://github.com/google/guava
 
-    Retrofit
-    https://github.com/square/retrofit
+  Retrofit https://github.com/square/retrofit
 
-    Ahbottomnavigation
-    https://github.com/aurelhubert/ahbottomnavigation
+  Ahbottomnavigation https://github.com/aurelhubert/ahbottomnavigation
 
-    CircleIndicator
-    https://github.com/ongakuer/CircleIndicator
+  CircleIndicator https://github.com/ongakuer/CircleIndicator
 
-    TedPermission
-    https://github.com/ParkSangGwon/TedPermission
+  TedPermission https://github.com/ParkSangGwon/TedPermission
 
-    Sqlcipher
-    https://github.com/sqlcipher/android-database-sqlcipher
+  Sqlcipher https://github.com/sqlcipher/android-database-sqlcipher
 
-    ZXing
-    https://github.com/journeyapps/zxing-android-embedded
+  ZXing https://github.com/journeyapps/zxing-android-embedded
+  
+  
+ ## Refernce(IOS)
+
+  SwiftyEOS https://github.com/ProChain/SwiftyEOS
+
+  Alamofire https://github.com/Alamofire/Alamofire
+
+  SQLite.swift https://github.com/stephencelis/SQLite.swift
+
+  CryptoSwift https://github.com/krzyzanowskim/CryptoSwift
+
+  SwiftKeychainWrapper https://github.com/jrendel/SwiftKeychainWrapper
+
+  DropDown https://github.com/AssistoLab/DropDown
+
+  MBProgressHUD https://github.com/jdg/MBProgressHUD
+
+  Toaster https://github.com/devxoul/Toaster
+  
+  
+  
+
+## License
+
+    EOSTART is released under the "MIT OR Apache-2.0"
