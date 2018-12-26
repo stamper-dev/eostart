@@ -80,3 +80,33 @@ Facebbok: https://www.facebook.com/wannabitlabs/
     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
     THE SOFTWARE.
+    
+    
+## Reffernce(Andoird)
+
+    EosCommander
+    https://github.com/playerone-id/EosCommander
+
+    PocketEOS
+    https://github.com/OracleChain/PocketEOS-Android
+
+    Guava
+    https://github.com/google/guava
+
+    Retrofit
+    https://github.com/square/retrofit
+
+    Ahbottomnavigation
+    https://github.com/aurelhubert/ahbottomnavigation
+
+    CircleIndicator
+    https://github.com/ongakuer/CircleIndicator
+
+    TedPermission
+    https://github.com/ParkSangGwon/TedPermission
+
+    Sqlcipher
+    https://github.com/sqlcipher/android-database-sqlcipher
+
+    ZXing
+    https://github.com/journeyapps/zxing-android-embedded
