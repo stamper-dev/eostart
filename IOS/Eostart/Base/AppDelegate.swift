@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         UINavigationBar.appearance().barStyle = .blackOpaque
-        let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as! UIView
-        statusBar.backgroundColor = UIColor(hexString: "#3F4863")
+//        let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as! UIView
+//        statusBar.backgroundColor = UIColor(hexString: "#3F4863")
         
         DropDown.startListeningToKeyboard()
         return true

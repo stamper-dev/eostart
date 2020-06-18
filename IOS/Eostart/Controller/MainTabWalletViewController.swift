@@ -46,6 +46,7 @@ class MainTabWalletViewController: BaseViewController, UITableViewDelegate, UITa
         self.tokensTableView.dataSource = self
         self.tokensTableView.separatorStyle = UITableViewCellSeparatorStyle.none
         self.tokensTableView.register(UINib(nibName: "TokensViewCell", bundle: nil), forCellReuseIdentifier: "TokensViewCell")
+//        self.handleRefresh()
         
     }
     
@@ -58,7 +59,7 @@ class MainTabWalletViewController: BaseViewController, UITableViewDelegate, UITa
     
     func onRefreshUserData() {
         let recentuserId = BaseDao.instance.getRecentAccountId()
-        var users = BaseDao.instance.selectAllUsers()
+        let users = BaseDao.instance.selectAllUsers()
         if users.count < 1 {
             print("ERROR")
         } else if (recentuserId < 0) {
@@ -76,22 +77,25 @@ class MainTabWalletViewController: BaseViewController, UITableViewDelegate, UITa
         titleAccountLabel.text = user?.user_account
         tokens = BaseDao.instance.selectAllTokens();
         
-        self.showWaittingAlert()
-        if(BaseDao.instance.getLastCheckTime() == nil) {
-            self.reqEosTic()
-        } else {
-            let checked = UInt64(floor((BaseDao.instance.getLastCheckTime()?.timeIntervalSince1970)!)) + UInt64(60)
-            let now     = UInt64(floor(NSDate().timeIntervalSince1970))
-            if(checked < now) {
-                self.reqEosTic()
-            } else {
-                self.eosTic = BaseDao.instance.getEosTic()
-                self.tokensTableView.beginUpdates()
-                self.tokensTableView.reloadData()
-                self.tokensTableView.endUpdates()
-                self.hideWaittingAlert()
-            }
-        }
+//        self.showWaittingAlert()
+//        if(BaseDao.instance.getLastCheckTime() == nil) {
+//            self.reqEosTic()
+//        } else {
+//            let checked = UInt64(floor((BaseDao.instance.getLastCheckTime()?.timeIntervalSince1970)!)) + UInt64(60)
+//            let now     = UInt64(floor(NSDate().timeIntervalSince1970))
+//            if(checked < now) {
+//                self.reqEosTic()
+//            } else {
+//                self.eosTic = BaseDao.instance.getEosTic()
+//                self.tokensTableView.beginUpdates()
+//                self.tokensTableView.reloadData()
+//                self.tokensTableView.endUpdates()
+//                self.hideWaittingAlert()
+//            }
+//        }
+        
+        self.reqEosTic()
+        self.reqUserInfo(userId: self.user!.user_account)
         
         
         
@@ -158,6 +162,7 @@ class MainTabWalletViewController: BaseViewController, UITableViewDelegate, UITa
     
     @objc func handleRefresh() {
         self.reqEosTic()
+        self.reqUserInfo(userId: self.user!.user_account)
     }
     
     @objc func titleAccountClick() {
@@ -236,17 +241,12 @@ class MainTabWalletViewController: BaseViewController, UITableViewDelegate, UITa
     
     
     func reqEosTic() {
-        let request = Alamofire .request(URL_EOS_TIC+"1765",
-                                         method: .get,
-                                         parameters: ["convert":BaseDao.instance.getUserCurrencyS()],
-                                         encoding: URLEncoding.default,
-                                         headers: [:]);
+        let request = Alamofire.request(PRICE_TIC + "eos", method: .get,  parameters: [:], encoding: URLEncoding.default, headers: [:]);
         request.responseJSON { (response) in
             switch response.result {
             case .success(let res):
                 BaseDao.instance.setEosTic(res as! NSDictionary)
                 self.eosTic = res as? NSDictionary
-                self.reqUserInfo(userId: self.user!.user_account)
 
             case .failure(let error):
                 self.refresher.endRefreshing()

@@ -57,9 +57,9 @@ class WelcomeViewController: UIViewController, WelcomePageViewControllerDelegate
         beforeBtn.setTitle("skip".localized(), for: .normal)
         nextBtn.setTitle("next".localized(), for: .normal)
         
-        let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as! UIView
-        statusBar.backgroundColor = UIColor(hexString: "#FFFFFF")
-        UIApplication.shared.statusBarStyle = .default
+//        let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as! UIView
+//        statusBar.backgroundColor = UIColor(hexString: "#FFFFFF")
+//        UIApplication.shared.statusBarStyle = .default
 
     }
     

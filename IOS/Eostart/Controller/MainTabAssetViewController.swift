@@ -59,7 +59,6 @@ class MainTabAssetViewController: BaseViewController {
 //        if let viewControllers = navigationController?.viewControllers {
 //            print("stack " , viewControllers.count)
 //        }
-
         
     }
     
@@ -73,7 +72,7 @@ class MainTabAssetViewController: BaseViewController {
     
     func onRefreshUserData() {
         let recentuserId = BaseDao.instance.getRecentAccountId()
-        var users = BaseDao.instance.selectAllUsers()
+        let users = BaseDao.instance.selectAllUsers()
         if users.count < 1 {
             print("ERROR")
         } else if (recentuserId < 0) {
@@ -89,21 +88,23 @@ class MainTabAssetViewController: BaseViewController {
         }
         
         titleAccountLabel.text = user?.user_account
+        self.reqEosTic()
+        self.reqUserInfo(userId: self.user!.user_account)
         
-        self.showWaittingAlert()
-        if(BaseDao.instance.getLastCheckTime() == nil) {
-            self.reqEosTic()
-        } else {
-            let checked = UInt64(floor((BaseDao.instance.getLastCheckTime()?.timeIntervalSince1970)!)) + UInt64(60)
-            let now     = UInt64(floor(NSDate().timeIntervalSince1970))
-            if(checked < now) {
-                self.reqEosTic()
-            } else {
-                self.eosTic = BaseDao.instance.getEosTic()
-                self.userData = BaseDao.instance.getUserInfo()
-                self.onUpdateView()
-            }
-        }
+//        self.showWaittingAlert()
+//        if(BaseDao.instance.getLastCheckTime() == nil) {
+//            self.reqEosTic()
+//        } else {
+//            let checked = UInt64(floor((BaseDao.instance.getLastCheckTime()?.timeIntervalSince1970)!)) + UInt64(60)
+//            let now     = UInt64(floor(NSDate().timeIntervalSince1970))
+//            if(checked < now) {
+//                self.reqEosTic()
+//            } else {
+//                self.eosTic = BaseDao.instance.getEosTic()
+//                self.userData = BaseDao.instance.getUserInfo()
+//                self.onUpdateView()
+//            }
+//        }
         
         
         var dropmenu = [String]()
@@ -169,6 +170,7 @@ class MainTabAssetViewController: BaseViewController {
     }
     
     func onUpdateView() {
+        if (self.userData == nil) { return }
         self.hideWaittingAlert()
         
         self.totalEosLabel.attributedText = AppUtils.displayAmout(AppUtils.getUserTotalAmount(self.userData), font: totalEosLabel.font, symbol: "EOS", deciaml: 4)
@@ -194,6 +196,7 @@ class MainTabAssetViewController: BaseViewController {
     
     
     @objc func handleRefresh() {
+        self.reqUserInfo(userId: self.user!.user_account)
         self.reqEosTic()
     }
 
@@ -203,18 +206,32 @@ class MainTabAssetViewController: BaseViewController {
     }
     
     func reqEosTic() {
-        let request = Alamofire
-            .request(URL_EOS_TIC+"1765",
-                     method: .get,
-                     parameters: ["convert":BaseDao.instance.getUserCurrencyS()],
-                     encoding: URLEncoding.default,
-                     headers: [:]);
+//        let request = Alamofire
+//            .request(URL_EOS_TIC+"1765",
+//                     method: .get,
+//                     parameters: ["convert":BaseDao.instance.getUserCurrencyS()],
+//                     encoding: URLEncoding.default,
+//                     headers: [:]);
+//        request.responseJSON { (response) in
+//            switch response.result {
+//            case .success(let res):
+//                BaseDao.instance.setEosTic(res as! NSDictionary)
+//                self.eosTic = res as? NSDictionary
+//                self.reqUserInfo(userId: self.user!.user_account)
+//
+//            case .failure(let error):
+//                self.refresher.endRefreshing()
+//                print(error)
+//            }
+//        }
+        let request = Alamofire.request(PRICE_TIC + "eos", method: .get,  parameters: [:], encoding: URLEncoding.default, headers: [:]);
         request.responseJSON { (response) in
             switch response.result {
             case .success(let res):
                 BaseDao.instance.setEosTic(res as! NSDictionary)
                 self.eosTic = res as? NSDictionary
-                self.reqUserInfo(userId: self.user!.user_account)
+                self.refresher.endRefreshing()
+                self.onUpdateView()
                 
             case .failure(let error):
                 self.refresher.endRefreshing()

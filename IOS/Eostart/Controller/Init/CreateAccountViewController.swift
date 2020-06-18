@@ -32,9 +32,9 @@ class CreateAccountViewController: BaseViewController {
         addAccountBtn.isEnabled = true
         createAccountBtn.isEnabled = true
         
-        let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as! UIView
-        statusBar.backgroundColor = UIColor(hexString: "#3F4863")
-        UIApplication.shared.statusBarStyle = .lightContent
+//        let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as! UIView
+//        statusBar.backgroundColor = UIColor(hexString: "#3F4863")
+//        UIApplication.shared.statusBarStyle = .lightContent
     }
 
 }

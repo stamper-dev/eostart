@@ -145,7 +145,7 @@ class AppUtils {
     
     static func getDisplayEosRate(_ currency: String, tic: NSDictionary) -> String {
         var result = ""
-        let path = "data.quotes." + currency + ".price"
+        let path = "market_data.current_price." + currency.lowercased()
         if let price = tic.value(forKeyPath: path) {
             let priceValue = NSDecimalNumber(string: String(describing: price))
             result =  getFormatter(currency).string(from: priceValue)! + " " + currency
@@ -155,7 +155,7 @@ class AppUtils {
     
     static func getDisplayTotal(_ currency: String, tic: NSDictionary, input : NSDictionary) -> String {
         var result = ""
-        let path = "data.quotes." + currency + ".price"
+        let path = "market_data.current_price." + currency.lowercased()
         if let price = tic.value(forKeyPath: path) {
             let total = NSDecimalNumber(string: String(describing: price)).multiplying(by: getUserTotalAmount(input))
             result =  getFormatter(currency).string(from: total)! + " " + currency
@@ -165,7 +165,7 @@ class AppUtils {
     
     static func getDisplayCash(_ currency: String, tic: NSDictionary, amount : NSDecimalNumber) -> String {
         var result = ""
-        let path = "data.quotes." + currency + ".price"
+        let path = "market_data.current_price." + currency.lowercased()
         if let price = tic.value(forKeyPath: path) {
             let total = NSDecimalNumber(string: String(describing: price)).multiplying(by: amount)
             result =  getFormatter(currency).string(from: total)! + " " + currency

@@ -22,7 +22,7 @@ DEPENDENCIES:
   - Toaster
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - AlamofireImage
     - CryptoSwift
@@ -44,4 +44,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: afdad4f5d85edbcbeb3ef8cef6ab02b7c2adaa63
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4

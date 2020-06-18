@@ -9,10 +9,10 @@
 "title_setting" = "설정";
 "title_add_account" = "계정 추가";
 "title_add_key" = "개인키 추가";
-"키" = "개인키";
+"title_check_key" = "개인키";
 "title_app_lock" = "앱 잠금 설정";
 
-"top_titl키_init_password" = "핀코드를 입력하세요.";
+"top_title_init_password" = "핀코드를 입력하세요.";
 "top_title_confirm_password" = "핀코드를 다시한번 입력하세요.";
 "top_title_verify_password" = "확인을 위해 핀코드를 입력하세요.";
 "key_check_des1" = "Private key 보안에 유의하세요.";
