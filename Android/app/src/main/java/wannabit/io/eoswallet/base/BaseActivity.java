@@ -81,12 +81,12 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (RootCheckHelper.isRooted()) {
-            DialogRooted dialog  = new DialogRooted();
-            dialog.setCancelable(false);
-            dialog.show(getSupportFragmentManager(), "dialog");
-            return;
-        }
+//        if (RootCheckHelper.isRooted()) {
+//            DialogRooted dialog  = new DialogRooted();
+//            dialog.setCancelable(false);
+//            dialog.show(getSupportFragmentManager(), "dialog");
+//            return;
+//        }
 
         if(!(this instanceof AppLockActivity) &&
                 !(this instanceof IntroActivity) &&
@@ -170,7 +170,6 @@ public class BaseActivity extends AppCompatActivity {
             WLog.r("Error during delete: " + e.getMessage());
 
         } finally {
-            getBaseDao().setLastEosTicTime(0l);
             Toast.makeText(BaseActivity.this, R.string.str_account_delete, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, IntroActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);

@@ -2,19 +2,19 @@
     <string name="app_name">EOSTART</string>
 
 
-    <!--<string name="bp_base_url">https://api.eosnewyork.io:443</string>-->
-    <string name="bp_base_url">https://eos.greymass.com:443</string>
-    <string name="coinmarketcap_url">https://api.coinmarketcap.com/</string>
-    <string name="eospark_url">https://eospark.com/</string>
-    <string name="wannabit_test_url">https://wallet-api-dev.wannabit.io/</string>
-    <string name="wannabit_pro_url">https://wallet-api.wannabit.io/</string>
-    <string name="chain_id">aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906</string>
-    <string name="eospark_param_token">token</string>
-    <string name="eospark_param_trx_info">get_account_related_trx_info</string>
-    <string name="eospark_param_trx_check">get_transaction_detail_info</string>
-    <string name="db_pppw">wannabitgoeshere</string>
-    <string name="eospark_api_url">https://api.eospark.com/</string>
-    <string name="eospark_api_key">61a82849325ae02328ee47863d5bca24</string>
+<!--    &lt;!&ndash;<string name="bp_base_url">https://api.eosnewyork.io:443</string>&ndash;&gt;-->
+<!--    <string name="bp_base_url">https://eos.greymass.com:443</string>-->
+<!--    <string name="coinmarketcap_url">https://api.coinmarketcap.com/</string>-->
+<!--    <string name="eospark_url">https://eospark.com/</string>-->
+<!--    <string name="wannabit_test_url">https://wallet-api-dev.wannabit.io/</string>-->
+<!--    <string name="wannabit_pro_url">https://wallet-api.wannabit.io/</string>-->
+<!--    <string name="chain_id">aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906</string>-->
+<!--    <string name="eospark_param_token">token</string>-->
+<!--    <string name="eospark_param_trx_info">get_account_related_trx_info</string>-->
+<!--    <string name="eospark_param_trx_check">get_transaction_detail_info</string>-->
+<!--    <string name="db_pppw">wannabitgoeshere</string>-->
+<!--    <string name="eospark_api_url">https://api.eospark.com/</string>-->
+<!--    <string name="eospark_api_key">61a82849325ae02328ee47863d5bca24</string>-->
 
 
     <string name="str_skip">Skip</string>

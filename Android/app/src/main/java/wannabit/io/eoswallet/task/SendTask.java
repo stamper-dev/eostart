@@ -70,6 +70,7 @@ public class SendTask extends AsyncTask<String, Void, String> {
      */
     @Override
     protected String doInBackground(String... strings) {
+        WLog.w("SendTask doInBackground");
         String result = null;
         try {
             String key = WUtil.onGetPrivateKey(mApp, strings[0], strings[1], strings[2]);

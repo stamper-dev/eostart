@@ -28,6 +28,7 @@ import wannabit.io.eoswallet.model.WBRecent;
 import wannabit.io.eoswallet.model.WBToken;
 import wannabit.io.eoswallet.model.WBUser;
 import wannabit.io.eoswallet.network.ResAccountInfo;
+import wannabit.io.eoswallet.network.ResCoinGecko;
 import wannabit.io.eoswallet.network.ResEosTick;
 import wannabit.io.eoswallet.utils.WLog;
 import wannabit.io.eoswallet.utils.WUtil;
@@ -98,6 +99,23 @@ public class BaseDao {
     public void setLastEosTicTime(long time) {
         getSharedPreferences().edit().putLong(BaseConstant.PREFER_LAST_TIC_TIME, time).commit();
 
+    }
+
+
+    public ResCoinGecko getLastPriceTic(){
+        ResCoinGecko result = null;
+        try {
+            String jsonText = getSharedPreferences().getString(BaseConstant.PREFER_LAST_EOS_TIC, null);
+            result = new Gson().fromJson(jsonText, ResCoinGecko.class);
+        } catch (Exception e) {
+            WLog.r("Pre error lastPricetic");
+        }
+        return result;
+    }
+
+    public void setLastPriceTic(ResCoinGecko tic){
+        String jsonText = new Gson().toJson(tic);
+        getSharedPreferences().edit().putString(BaseConstant.PREFER_LAST_EOS_TIC, jsonText).commit();
     }
 
 

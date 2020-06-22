@@ -18,6 +18,7 @@ public class ApiClient {
     private static Retrofit retrofit_wb = null;
     private static Retrofit retrofit_ep = null;
     private static Retrofit retrofit_eosaprk_api = null;
+    private static Retrofit retrofit_coingecko = null;
 
     public static Retrofit getBPClient(Context c) {
         if (retrofit_bp == null) {
@@ -45,6 +46,20 @@ public class ApiClient {
             }
         }
         return retrofit_cmc;
+    }
+
+    public static Retrofit getGeckoClient(Context c) {
+        if (retrofit_coingecko == null) {
+            synchronized (ApiClient.class) {
+                if (retrofit_coingecko == null)  {
+                    retrofit_coingecko = new Retrofit.Builder()
+                            .baseUrl(c.getString(R.string.coingecko_url))
+                            .addConverterFactory(GsonConverterFactory.create())
+                            .build();
+                }
+            }
+        }
+        return retrofit_coingecko;
     }
 
     public static Retrofit getWBClient(Context c) {
@@ -189,6 +204,14 @@ public class ApiClient {
         return service.getEosTic(id, currency);
     }
 
+
+    /**
+     * with Coingecko calls
+     */
+    public static Call<ResCoinGecko> getPriceTic(Context c) {
+        MarketCapService service = getGeckoClient(c).create(MarketCapService.class);
+        return service.getPriceTic();
+    }
 
 
 

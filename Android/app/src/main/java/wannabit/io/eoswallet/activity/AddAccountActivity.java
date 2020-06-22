@@ -120,7 +120,7 @@ public class AddAccountActivity extends BaseActivity implements View.OnClickList
     public void onClick(View view) {
         if(view.equals(mBtnNext)) {
             onHideKeyboard();
-            if(getBaseDao().isExistingAccount(mAccountInput.getText().toString().trim())) {
+            if (getBaseDao().isExistingAccount(mAccountInput.getText().toString().trim())) {
                 Toast.makeText(AddAccountActivity.this, R.string.str_already_existed_account, Toast.LENGTH_SHORT).show();
                 return;
             }

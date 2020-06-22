@@ -43,6 +43,7 @@ import wannabit.io.eoswallet.fragment.MainWalletFragment;
 import wannabit.io.eoswallet.model.WBUser;
 import wannabit.io.eoswallet.network.ApiClient;
 import wannabit.io.eoswallet.network.ResAccountInfo;
+import wannabit.io.eoswallet.network.ResCoinGecko;
 import wannabit.io.eoswallet.network.ResEosTick;
 import wannabit.io.eoswallet.utils.FadePageTransformer;
 import wannabit.io.eoswallet.utils.WLog;
@@ -62,6 +63,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private ResAccountInfo                  mResAccountInfo;
     private ResEosTick                      mResEosTick;
+    private ResCoinGecko                    mResCoinGecko;
 
     private ActivityMainBinding             mBinding;
 
@@ -162,18 +164,20 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     public void onSwitchAccount() {
         mBinding.toolbarTitle.setText(mSelectedUser.getAccount());
-        if(getBaseDao().getLastEosTicTime() < (System.currentTimeMillis() - 30000)
-                || getBaseDao().getLastEosTic() == null
-                || getBaseDao().getLastUserInfo() == null) {
-            onShowWaitDialog();
-            onRequestEosTick();
-        } else {
-            mResAccountInfo = getBaseDao().getLastUserInfo();
-            mResEosTick = getBaseDao().getLastEosTic();
-            if(mViewPagerAdapter != null && mViewPagerAdapter.getCurrentFragment() != null){
-                mViewPagerAdapter.getCurrentFragment().onRefreshByMainTab(true);
-            }
-        }
+//        if(getBaseDao().getLastEosTicTime() < (System.currentTimeMillis() - 30000)
+//                || getBaseDao().getLastEosTic() == null
+//                || getBaseDao().getLastUserInfo() == null) {
+//            onShowWaitDialog();
+//            onRequestEosTick();
+//        } else {
+//            mResAccountInfo = getBaseDao().getLastUserInfo();
+//            mResEosTick = getBaseDao().getLastEosTic();
+//            if(mViewPagerAdapter != null && mViewPagerAdapter.getCurrentFragment() != null){
+//                mViewPagerAdapter.getCurrentFragment().onRefreshByMainTab(true);
+//            }
+//        }
+        onRequestUserInfo(mSelectedUser.getAccount());
+        onRequestEosTick();
     }
 
     @Override
@@ -283,15 +287,19 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         return mResEosTick;
     }
 
+
+    public ResCoinGecko getCoinGeckoTic() {
+        return mResCoinGecko;
+    }
+
     public void onRequestUserInfo(String userId) {
         ApiClient.getAccount(this, userId).enqueue(new Callback<JsonObject>() {
             @Override
             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
                 WLog.w("onRequestUserInfo OK");
-                if(response.isSuccessful()) {
+                if (response.isSuccessful()) {
                     mResAccountInfo = new Gson().fromJson(response.body(), ResAccountInfo.class);
                     getBaseDao().setLastUser(mResAccountInfo);
-                    getBaseDao().setLastEosTicTime(System.currentTimeMillis());
                     if(mViewPagerAdapter != null && mViewPagerAdapter.getCurrentFragment() != null)
                         mViewPagerAdapter.getCurrentFragment().onRefreshByMainTab(true);
                 } else {
@@ -310,22 +318,44 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
     public void onRequestEosTick() {
-        ApiClient.getEosTic(this, BaseConstant.COINMARKETCAP_EOS, getBaseDao().getUserCurrencyStr(getBaseContext())).enqueue(new Callback<JsonObject>() {
-            @Override
-            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+//        ApiClient.getEosTic(this, BaseConstant.COINMARKETCAP_EOS, getBaseDao().getUserCurrencyStr(getBaseContext())).enqueue(new Callback<JsonObject>() {
+//            @Override
+//            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
 //                WLog.w("onRequestEosTick OK");
-                if(response.isSuccessful()) {
-                    mResEosTick = new Gson().fromJson(response.body(), ResEosTick.class);
-                    getBaseDao().setLastEosTic(mResEosTick);
-                    onRequestUserInfo(mSelectedUser.getAccount());
-                }  else {
+//                if(response.isSuccessful()) {
+//                    mResEosTick = new Gson().fromJson(response.body(), ResEosTick.class);
+//                    getBaseDao().setLastEosTic(mResEosTick);
+//                    if(mViewPagerAdapter != null && mViewPagerAdapter.getCurrentFragment() != null)
+//                        mViewPagerAdapter.getCurrentFragment().onRefreshByMainTab(false);
+//                }  else {
+//                    Toast.makeText(MainActivity.this, R.string.str_error_network_less, Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//            @Override
+//            public void onFailure(Call<JsonObject> call, Throwable t) {
+//                WLog.w("onRequestEosTick onFailure : " + t.getMessage());
+//                Toast.makeText(MainActivity.this, R.string.str_error_network_less, Toast.LENGTH_SHORT).show();
+//            }
+//        });
+        ApiClient.getPriceTic(this).enqueue(new Callback<ResCoinGecko>() {
+            @Override
+            public void onResponse(Call<ResCoinGecko> call, Response<ResCoinGecko> response) {
+                if (response.isSuccessful()) {
+                    mResCoinGecko = response.body();
+                    getBaseDao().setLastPriceTic(mResCoinGecko);
+                    if(mViewPagerAdapter != null && mViewPagerAdapter.getCurrentFragment() != null)
+                        mViewPagerAdapter.getCurrentFragment().onRefreshByMainTab(false);
+                } else {
                     Toast.makeText(MainActivity.this, R.string.str_error_network_less, Toast.LENGTH_SHORT).show();
                 }
+
             }
+
             @Override
-            public void onFailure(Call<JsonObject> call, Throwable t) {
+            public void onFailure(Call<ResCoinGecko> call, Throwable t) {
                 WLog.w("onRequestEosTick onFailure : " + t.getMessage());
                 Toast.makeText(MainActivity.this, R.string.str_error_network_less, Toast.LENGTH_SHORT).show();
+
             }
         });
     }
@@ -363,7 +393,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                         mAccoutsWindow.dismiss();
                         mSelectedUser = mRegistedUsers.get(position);
                         getBaseDao().setRecentAccountId(mSelectedUser.getId());
-                        getBaseDao().setLastEosTicTime(0l);
                         onSwitchAccount();
                     }
 

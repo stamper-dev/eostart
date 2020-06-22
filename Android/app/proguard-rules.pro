@@ -1,0 +1,2 @@
+-dontwarn com.google.**
+-dontwarn okhttp3.internal.**

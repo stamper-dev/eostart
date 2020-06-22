@@ -7,20 +7,26 @@ android {
         applicationId "wannabit.io.eoswallet"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 133
-        versionName "1.2.4"
+        versionCode 134
+        versionName "1.2.5"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            minifyEnabled true
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 
     signingConfigs {
         debug {
             storeFile file('debug.keystore')
+        }
+        release {
+            storeFile file('eostartkeystore')
+            storePassword "dnjsjqlt034#"
+            keyAlias "key0"
+            keyPassword "dnjsjqlt034#"
         }
     }
 

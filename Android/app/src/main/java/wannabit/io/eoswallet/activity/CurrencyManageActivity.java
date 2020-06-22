@@ -78,9 +78,6 @@ public class CurrencyManageActivity extends BaseActivity {
     public void onBackPressed() {
         if(mCurrencyAdapter != null) {
             getBaseDao().setUserCurrency(mCurrencyAdapter.getCheckedPosition());
-            if(mInitposition != mCurrencyAdapter.getCheckedPosition())
-                getBaseDao().setLastEosTicTime(0l);
-
         }
         super.onBackPressed();
     }

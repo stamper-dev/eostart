@@ -216,9 +216,13 @@ public class MainWalletFragment extends BaseFragment implements SwipeRefreshLayo
             if(wbToken.getUserAmount() > -1d) {
                 holder.itemAmountToken.setText(WUtil.AmountSpanFormatWithoutSymbol(getBaseActivity(), wbToken.getUserAmount(), wbToken));
                 if(wbToken.getContractAddr().equals(getString(R.string.str_eos_contract))) {
-                    holder.itemPriceToken.setText(WUtil.getDisplayPriceSumStr(getBaseActivity(), getBaseDao().getLastEosTic(), getBaseDao().getUserCurrencyStr(getBaseActivity()), wbToken.getUserAmount()));
+//                    holder.itemPriceToken.setText(WUtil.getDisplayPriceSumStr(getBaseActivity(), getBaseDao().getLastEosTic(), getBaseDao().getUserCurrencyStr(getBaseActivity()), wbToken.getUserAmount()));
+                    holder.itemPriceToken.setText(WUtil.getDisplayPriceSumStr(getBaseActivity(), getBaseDao().getLastPriceTic(), getBaseDao().getUserCurrencyStr(getBaseActivity()), wbToken.getUserAmount()));
+
                 } else {
-                    holder.itemPriceToken.setText(WUtil.getDisplayPriceSumStr(getBaseActivity(), getBaseDao().getLastEosTic(), getBaseDao().getUserCurrencyStr(getBaseActivity()), 0d));
+//                    holder.itemPriceToken.setText(WUtil.getDisplayPriceSumStr(getBaseActivity(), getBaseDao().getLastEosTic(), getBaseDao().getUserCurrencyStr(getBaseActivity()), 0d));
+                    holder.itemPriceToken.setText(WUtil.getDisplayPriceSumStr(getBaseActivity(), getBaseDao().getLastPriceTic(), getBaseDao().getUserCurrencyStr(getBaseActivity()), 0d));
+
                 }
                 holder.itemClickView.setClickable(true);
             } else {
@@ -258,9 +262,9 @@ public class MainWalletFragment extends BaseFragment implements SwipeRefreshLayo
 
                     holder.itemAmountToken.setText(WUtil.AmountSpanFormatWithoutSymbol(getBaseActivity(), mTokens.get(position).getUserAmount(), wbToken));
                     if(wbToken.getContractAddr().equals(getString(R.string.str_eos_contract))) {
-                        holder.itemPriceToken.setText(WUtil.getDisplayPriceSumStr(getBaseActivity(), getBaseDao().getLastEosTic(), getBaseDao().getUserCurrencyStr(getBaseActivity()), wbToken.getUserAmount()));
+                        holder.itemPriceToken.setText(WUtil.getDisplayPriceSumStr(getBaseActivity(), getBaseDao().getLastPriceTic(), getBaseDao().getUserCurrencyStr(getBaseActivity()), wbToken.getUserAmount()));
                     } else {
-                        holder.itemPriceToken.setText(WUtil.getDisplayPriceSumStr(getBaseActivity(), getBaseDao().getLastEosTic(), getBaseDao().getUserCurrencyStr(getBaseActivity()), 0d));
+                        holder.itemPriceToken.setText(WUtil.getDisplayPriceSumStr(getBaseActivity(), getBaseDao().getLastPriceTic(), getBaseDao().getUserCurrencyStr(getBaseActivity()), 0d));
                     }
                     holder.itemClickView.setClickable(true);
 

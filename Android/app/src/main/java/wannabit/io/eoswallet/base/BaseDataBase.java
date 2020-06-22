@@ -20,12 +20,10 @@ public class BaseDataBase extends SQLiteOpenHelper {
 
     public BaseDataBase(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
-        WLog.w("BaseDataBase");
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        WLog.w("BaseDataBase onCreate");
         sqLiteDatabase.execSQL("CREATE TABLE [" + BaseConstant.DB_TABLE_USER +
                 "] ([id] INTEGER PRIMARY KEY AUTOINCREMENT, [account] TEXT, [userinfo] TEXT)");
 
@@ -39,7 +37,6 @@ public class BaseDataBase extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
-        WLog.w("BaseDataBase onUpgrade");
         if(oldVersion == 1 && newVersion == 2) {
             sqLiteDatabase.execSQL("CREATE TABLE [" + BaseConstant.DB_TABLE_ACTION +
                     "] ([id] INTEGER PRIMARY KEY AUTOINCREMENT, [account] TEXT, [seq] INTEGER, [action] TEXT)");

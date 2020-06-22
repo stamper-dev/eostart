@@ -224,16 +224,16 @@ public class WalletDetailActivity extends BaseActivity implements View.OnClickLi
                         mTokenAmount.setText(WUtil.AmountSpanFormat(getBaseContext(), response.body().get(0), mWBToken));
                         if(mWBToken.getContractAddr().equals(getString(R.string.str_eos_contract))) {
                             final Double eosAmount = Double.parseDouble(response.body().get(0).toLowerCase().replace(mWBToken.getSymbol().toLowerCase(), ""));
-                            mTokenPrice.setText(WUtil.getDisplayPriceSumStr(getBaseContext(), getBaseDao().getLastEosTic(), getBaseDao().getUserCurrencyStr(getBaseContext()), eosAmount));
+                            mTokenPrice.setText(WUtil.getDisplayPriceSumStr(getBaseContext(), getBaseDao().getLastPriceTic(), getBaseDao().getUserCurrencyStr(getBaseContext()), eosAmount));
                         } else {
-                            mTokenPrice.setText(WUtil.getDisplayPriceSumStr(getBaseContext(), getBaseDao().getLastEosTic(), getBaseDao().getUserCurrencyStr(getBaseContext()), 0d));
+                            mTokenPrice.setText(WUtil.getDisplayPriceSumStr(getBaseContext(), getBaseDao().getLastPriceTic(), getBaseDao().getUserCurrencyStr(getBaseContext()), 0d));
                         }
                         mControlLayout.setVisibility(View.VISIBLE);
                         mSendBtn.setEnabled(true);
 
                     } else {
                         mTokenAmount.setText(WUtil.AmountSpanFormat(getBaseContext(), "0", mWBToken));
-                        mTokenPrice.setText(WUtil.getDisplayPriceSumStr(getBaseContext(), getBaseDao().getLastEosTic(), getBaseDao().getUserCurrencyStr(getBaseContext()), 0d));
+                        mTokenPrice.setText(WUtil.getDisplayPriceSumStr(getBaseContext(), getBaseDao().getLastPriceTic(), getBaseDao().getUserCurrencyStr(getBaseContext()), 0d));
                     }
 
                 } else {

@@ -171,13 +171,13 @@ public class SendActivity extends BaseActivity implements View.OnClickListener, 
                 WLog.w("afterTextChanged " + editable.toString());
                 String enteredString = editable.toString().replace(",","").trim();
                 if(enteredString == null || enteredString.length() == 0) {
-                    mSendAmoutToCash.setText(WUtil.getDisplayPriceSumStr(getBaseContext(), getBaseDao().getLastEosTic(), getBaseDao().getUserCurrencyStr(getBaseContext()), 0d));
+                    mSendAmoutToCash.setText(WUtil.getDisplayPriceSumStr(getBaseContext(), getBaseDao().getLastPriceTic(), getBaseDao().getUserCurrencyStr(getBaseContext()), 0d));
                     mSendAmount.setBackground(getDrawable(R.drawable.edittext_correct));
                     onUpdateSendBtn();
 
                 } else if(!enteredString.endsWith(".") && !enteredString.startsWith(".")) {
                     final BigDecimal inputAmout = new BigDecimal(enteredString);
-                    mSendAmoutToCash.setText("~ " + WUtil.getDisplayPriceSumStr(getBaseContext(), getBaseDao().getLastEosTic(), getBaseDao().getUserCurrencyStr(getBaseContext()), inputAmout.doubleValue()));
+                    mSendAmoutToCash.setText("~ " + WUtil.getDisplayPriceSumStr(getBaseContext(), getBaseDao().getLastPriceTic(), getBaseDao().getUserCurrencyStr(getBaseContext()), inputAmout.doubleValue()));
                     if(inputAmout.compareTo(mCurrentBalance) > 0) {
                         mSendAmount.setBackground(getDrawable(R.drawable.edittext_red));
                     } else {
@@ -259,7 +259,7 @@ public class SendActivity extends BaseActivity implements View.OnClickListener, 
     private void onUpdateViews() {
         mToolbarTitle.setText(getString(R.string.str_send) + " " + mWBToken.getSymbol());
         mSendAmount.setHint(mWBToken.getSymbol() + " " + getString(R.string.str_amount));
-        mSendAmoutToCash.setText(WUtil.getDisplayPriceSumStr(getBaseContext(), getBaseDao().getLastEosTic(), getBaseDao().getUserCurrencyStr(getBaseContext()), 0d));
+        mSendAmoutToCash.setText(WUtil.getDisplayPriceSumStr(getBaseContext(), getBaseDao().getLastPriceTic(), getBaseDao().getUserCurrencyStr(getBaseContext()), 0d));
         if(mWBToken.getContractAddr().equals(getString(R.string.str_eos_contract))) {
             mSendAmoutToCash.setVisibility(View.VISIBLE);
             Glide.with(this).load(R.drawable.logo_eos).asGif().into(new SimpleTarget<GifDrawable>() {
@@ -321,10 +321,12 @@ public class SendActivity extends BaseActivity implements View.OnClickListener, 
 
 
     private boolean onCheckValidation() {
+        WLog.w("onCheckValidation 00");
         if(!WUtil.checkAccountPattern(mSendReceiver.getText().toString().trim()))
             return false;
 
 
+        WLog.w("onCheckValidation 11");
         try {
             BigDecimal userInput = new BigDecimal(mSendAmount.getText().toString().replace(",","").trim());
             if (userInput.compareTo(BigDecimal.ZERO) <= 0 || userInput.compareTo(mCurrentBalance) > 0) {
@@ -334,7 +336,7 @@ public class SendActivity extends BaseActivity implements View.OnClickListener, 
             return false;
         }
 
-
+        WLog.w("onCheckValidation 22");
         String enteredMemo = mSendMemo.getText().toString().trim();
         if(!TextUtils.isEmpty(enteredMemo)) {
             try {
@@ -345,6 +347,7 @@ public class SendActivity extends BaseActivity implements View.OnClickListener, 
                 return false;
             }
         }
+        WLog.w("onCheckValidation 33");
         return true;
     }
 

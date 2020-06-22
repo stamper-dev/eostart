@@ -181,7 +181,6 @@ public class AddKeyActivity extends BaseActivity implements View.OnClickListener
             startActivity(intent);
 
         } else {
-            getBaseDao().setLastEosTicTime(0l);
             WBUser newUser = new WBUser(mAccount, "");
             if(getBaseDao().onInsertUser(newUser) > 0 ) {
                 getBaseDao().setRecentAccountId(getBaseDao().onSelectByAccount(mAccount).getId());
@@ -198,7 +197,6 @@ public class AddKeyActivity extends BaseActivity implements View.OnClickListener
 
     private void onAddUserWithPrivateKey() {
 //        WLog.w("onAddUserWithPrivateKey");
-        getBaseDao().setLastEosTicTime(0l);
         Intent intent = new Intent(AddKeyActivity.this, PasscodeActivity.class);
         intent.putExtra("account", mAccount);
         if(mPrivateKeyInput.getText().toString().trim().length() > 0)

@@ -24,6 +24,7 @@ import wannabit.io.eoswallet.activity.WalletDetailActivity;
 import wannabit.io.eoswallet.base.BaseFragment;
 import wannabit.io.eoswallet.dialog.DialogRequestKey;
 import wannabit.io.eoswallet.network.ResAccountInfo;
+import wannabit.io.eoswallet.network.ResCoinGecko;
 import wannabit.io.eoswallet.network.ResEosTick;
 import wannabit.io.eoswallet.utils.WLog;
 import wannabit.io.eoswallet.utils.WUtil;
@@ -39,6 +40,7 @@ public class MainAssetFragment extends BaseFragment implements SwipeRefreshLayou
 
     private ResAccountInfo  mResAccountInfo;
     private ResEosTick      mResEosTick;
+    private ResCoinGecko    mResCoinGecko;
 
 
     public static MainAssetFragment newInstance() {
@@ -112,12 +114,15 @@ public class MainAssetFragment extends BaseFragment implements SwipeRefreshLayou
 
         }
 
-        if(mResEosTick != null) {
-            eosPrice.setText(getString(R.string.str_one_eos) + WUtil.getDisplayPriceStr(getBaseActivity(), mResEosTick, getBaseDao().getUserCurrencyStr(getBaseActivity())));
+        if(mResCoinGecko != null) {
+            WLog.w("1111 " + getBaseDao().getUserCurrencyStr(getBaseActivity()));
+            eosPrice.setText(getString(R.string.str_one_eos) + WUtil.getDisplayPriceStr(getBaseActivity(), mResCoinGecko, getBaseDao().getUserCurrencyStr(getBaseActivity())));
+        } else {
+            WLog.w("2222");
         }
 
-        if(mResEosTick != null && mResAccountInfo != null) {
-            totalCash.setText(WUtil.getDisplayPriceSumStr(getBaseActivity(), mResEosTick, getBaseDao().getUserCurrencyStr(getBaseActivity()), mResAccountInfo.getTotalAmout()));
+        if(mResCoinGecko != null && mResAccountInfo != null) {
+            totalCash.setText(WUtil.getDisplayPriceSumStr(getBaseActivity(), mResCoinGecko, getBaseDao().getUserCurrencyStr(getBaseActivity()), mResAccountInfo.getTotalAmout()));
         }
 
     }
@@ -141,7 +146,8 @@ public class MainAssetFragment extends BaseFragment implements SwipeRefreshLayou
         if(isAdded()) {
             willBeDisplayed();
             mResAccountInfo = getMainActivity().getAccountInfo();
-            mResEosTick = getMainActivity().getEosTick();
+//            mResEosTick = getMainActivity().getEosTick();
+            mResCoinGecko = getMainActivity().getCoinGeckoTic();
             onUpdateView();
 
             if(swipeRefreshLayout != null)

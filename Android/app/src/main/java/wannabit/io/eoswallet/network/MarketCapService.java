@@ -10,4 +10,8 @@ import retrofit2.http.Query;
 public interface MarketCapService {
     @GET("v2/ticker/{id}/")
     Call<JsonObject> getEosTic(@Path("id") int eosId, @Query("convert") String currency);
+
+
+    @GET("api/v3/coins/eos")
+    Call<ResCoinGecko> getPriceTic();
 }

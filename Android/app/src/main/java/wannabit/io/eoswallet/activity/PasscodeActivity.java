@@ -374,7 +374,6 @@ public class PasscodeActivity extends BaseActivity implements PasscodeListener, 
 
         } else if (type == TaskType.BuyRamByte) {
             WLog.w("onSuccessTask BuyRamByte");
-            getBaseDao().setLastEosTicTime(0l);
             Toast.makeText(PasscodeActivity.this, R.string.str_ram_trade_success, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(PasscodeActivity.this, MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -382,7 +381,6 @@ public class PasscodeActivity extends BaseActivity implements PasscodeListener, 
 
         } else if (type == TaskType.BuyRam) {
             WLog.w("onSuccessTask BuyRam");
-            getBaseDao().setLastEosTicTime(0l);
             Toast.makeText(PasscodeActivity.this, R.string.str_ram_trade_success, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(PasscodeActivity.this, MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -390,7 +388,6 @@ public class PasscodeActivity extends BaseActivity implements PasscodeListener, 
 
         } else if (type == TaskType.SellRam) {
             WLog.w("onSuccessTask SellRam");
-            getBaseDao().setLastEosTicTime(0l);
             Toast.makeText(PasscodeActivity.this, R.string.str_ram_trade_success, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(PasscodeActivity.this, MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -398,7 +395,6 @@ public class PasscodeActivity extends BaseActivity implements PasscodeListener, 
 
         } else if (type == TaskType.Delegate) {
             WLog.w("onSuccessTask Delegate");
-            getBaseDao().setLastEosTicTime(0l);
             Toast.makeText(PasscodeActivity.this, R.string.str_delegate_success, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(PasscodeActivity.this, MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -406,7 +402,6 @@ public class PasscodeActivity extends BaseActivity implements PasscodeListener, 
 
         } else if (type == TaskType.Undelegate) {
             WLog.w("onSuccessTask Undelegate");
-            getBaseDao().setLastEosTicTime(0l);
             Toast.makeText(PasscodeActivity.this, R.string.str_undelegate_success, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(PasscodeActivity.this, MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);

@@ -31,6 +31,7 @@ import wannabit.io.eoswallet.model.WBUser;
 import wannabit.io.eoswallet.network.ReqPushTxn;
 import wannabit.io.eoswallet.network.ResAbiToBin;
 import wannabit.io.eoswallet.network.ResBlock;
+import wannabit.io.eoswallet.network.ResCoinGecko;
 import wannabit.io.eoswallet.network.ResEosTick;
 import wannabit.io.eoswallet.type.TypeChainId;
 
@@ -468,7 +469,7 @@ public class WUtil {
 
     public static DecimalFormat getPriceFormat(Context c, String currency) {
         String sPattern;
-        if(currency.equals(c.getString(R.string.str_krw))) {
+        if (currency.equals(c.getString(R.string.str_krw))) {
             sPattern = c.getString(R.string.str_format_krw);
         } else if (currency.equals(c.getString(R.string.str_btc))) {
             sPattern = c.getString(R.string.str_format_btc);
@@ -478,18 +479,18 @@ public class WUtil {
         return new DecimalFormat(sPattern);
     }
 
-    public static String getDisplayPriceStr(Context c, ResEosTick tic, String currency) {
+    public static String getDisplayPriceStr(Context c, ResCoinGecko tic, String currency) {
         String result = "";
-        if (tic != null && tic.getData().getQuotesMap().get(currency) != null) {
-            result = getPriceFormat(c, currency).format(tic.getData().getQuotesMap().get(currency).getPrice()) + " " + currency;
+        if (tic != null) {
+            result =  getPriceFormat(c, currency).format(tic.market_data.getPrice(currency))  + " " + currency;
         }
         return result;
     }
 
-    public static String getDisplayPriceSumStr(Context c, ResEosTick tic, String currency, Double amount) {
+    public static String getDisplayPriceSumStr(Context c, ResCoinGecko tic, String currency, Double amount) {
         String result = "";
-        if (tic != null && tic.getData().getQuotesMap().get(currency) != null) {
-            result = getPriceFormat(c, currency).format(tic.getData().getQuotesMap().get(currency).getPrice() * amount) + " " + currency;
+        if (tic != null) {
+            result = getPriceFormat(c, currency).format(tic.market_data.getPrice(currency) * amount) + " " + currency;
         }
         return result;
     }
