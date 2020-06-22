@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,20 +32,20 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAc-YT-vT1">
-                    <rect key="frame" x="0.0" y="20" width="375" height="347"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="487"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwK-Pf-tIh">
-                            <rect key="frame" x="117" y="104.5" width="141" height="23"/>
+                            <rect key="frame" x="136.5" y="174.5" width="141" height="23"/>
                             <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="JEU-az-B6X">
-                            <rect key="frame" x="93" y="155.5" width="189" height="36"/>
+                            <rect key="frame" x="112.5" y="225.5" width="189" height="36"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin_img_none" translatesAutoresizingMaskIntoConstraints="NO" id="Mop-Qm-Bs2">
                                     <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
@@ -80,7 +78,7 @@
                             </subviews>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Use 4 digits and 1 alphabet)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwb-1W-W4b">
-                            <rect key="frame" x="98" y="219.5" width="179" height="16.5"/>
+                            <rect key="frame" x="117.5" y="289.5" width="179" height="16.5"/>
                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                             <color key="textColor" red="0.0078431372550000003" green="0.69019607839999997" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -96,11 +94,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYo-WN-ZIf">
-                    <rect key="frame" x="0.0" y="367" width="375" height="300"/>
+                    <rect key="frame" x="0.0" y="531" width="414" height="331"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="POM-pJ-9Px">
-                            <rect key="frame" x="37.5" y="40" width="300" height="240"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="POM-pJ-9Px">
+                            <rect key="frame" x="57" y="45.5" width="300" height="240"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GKV-YS-dkv">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="60"/>
@@ -290,6 +287,10 @@
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" red="0.2470588235" green="0.28235294119999998" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="POM-pJ-9Px" firstAttribute="centerY" secondItem="NYo-WN-ZIf" secondAttribute="centerY" id="ZnQ-N9-GpO"/>
+                        <constraint firstItem="POM-pJ-9Px" firstAttribute="centerX" secondItem="NYo-WN-ZIf" secondAttribute="centerX" id="hqV-tZ-EV1"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.24705882352941178" green="0.28235294117647058" blue="0.38823529411764707" alpha="1" colorSpace="deviceRGB"/>
@@ -304,10 +305,11 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="NYo-WN-ZIf" secondAttribute="bottom" id="iSY-d2-dQm"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="142" y="154"/>
         </view>
     </objects>
     <resources>
-        <image name="arrowdl_ic" width="14" height="20"/>
+        <image name="arrowdl_ic" width="14" height="20.5"/>
         <image name="pin_img_none" width="24" height="24"/>
     </resources>
 </document>

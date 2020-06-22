@@ -35,10 +35,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application.topViewController!.isKind(of: PasswordViewController.self) ||
             application.topViewController!.isKind(of: IntroViewController.self) ||
             application.topViewController!.isKind(of: AppLockSetViewController.self)) {
-            
+
         } else {
             if(BaseDao.instance.getUsingAppLock() == true) {
                 let appLockVC = AppLockViewController(nibName: "AppLockViewController", bundle: nil)
+                appLockVC.modalPresentationStyle = .overFullScreen
                 application.topViewController!.present(appLockVC, animated: true, completion: nil)
             }
         }
@@ -51,7 +52,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (application.topViewController!.isKind(of: AppLockViewController.self)) {
             NotificationCenter.default.post(name: NOTI_STATE_FOREGROUND, object: nil, userInfo: nil)
         }
-        
     }
     
 

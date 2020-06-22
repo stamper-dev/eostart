@@ -133,7 +133,9 @@ class AppLockViewController: BaseViewController {
     func onUserSuccessUnlock() {
         if let presenter = presentingViewController as? IntroViewController {
             presenter.passed = true
-            self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true) {
+                presenter.reqVersionCheck()
+            }
         } else {
             self.dismiss(animated: true, completion: nil)
         }

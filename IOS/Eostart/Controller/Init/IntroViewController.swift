@@ -16,18 +16,17 @@ class IntroViewController: UIViewController {
     var passed:Bool = false;
     
     override func viewDidLoad() {
-//        print("IntroViewController  viewDidLoad")
         super.viewDidLoad()
         passed = false;
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print("IntroViewController  viewDidAppear ", isBeingPresented, isBeingDismissed)
         super.viewDidAppear(animated)
         
         if(BaseDao.instance.getUsingAppLock() == true && !passed) {
             let appLockVC = AppLockViewController(nibName: "AppLockViewController", bundle: nil)
+            appLockVC.modalPresentationStyle = .overFullScreen
             self.present(appLockVC, animated: true, completion: nil)
         } else {
             self.reqVersionCheck()

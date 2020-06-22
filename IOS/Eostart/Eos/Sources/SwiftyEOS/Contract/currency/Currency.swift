@@ -26,7 +26,6 @@ import Foundation
             completion(nil, NSError(domain: "", code: 0, userInfo: nil))
             return
         }
-        
         TransactionUtil.pushTransaction(abi: abiJson, account: transfer.from, privateKey: privateKey, completion: completion)
     }
 }

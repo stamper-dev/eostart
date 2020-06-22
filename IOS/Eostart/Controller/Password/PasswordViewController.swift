@@ -264,7 +264,6 @@ class PasswordViewController: BaseViewController {
             var errorValue: Error?
             do {
                 let hashKey = (self.mAccount! + self.mUserInsert).sha1()
-                print("onStartSend hashKey : ", hashKey)
                 if let key: String = KeychainWrapper.standard.string(forKey: hashKey) {
                     let transfer = Transfer()
                     transfer.from = self.mAccount!
@@ -277,17 +276,10 @@ class PasswordViewController: BaseViewController {
                         errorValue = error
                         resultVlaue = result
                         if errorValue != nil {
-                            if errorValue is RPCErrorResponse {
-                                print("\((errorValue as! RPCErrorResponse).errorDescription())")
-                            } else {
-                                print("other error: \(String(describing: errorValue?.localizedDescription))")
-                            }
-                            DispatchQueue.main.async(execute: {
-                                self.hideWaittingAlert()
-                                Toast(text: "error_invalid_password".localized(), duration: Delay.short).show()
-                            })
+                            Toast(text: String(describing: errorValue?.localizedDescription), duration: Delay.short).show()
+                            self.hideWaittingAlert()
+                            
                         } else {
-                            print("done. ", resultVlaue)
                             Toast(text: "send_success".localized(), duration: Delay.short).show()
                             let mainTabController : UIViewController = UIStoryboard(name: "MainTabStoryboard", bundle: nil).instantiateViewController(withIdentifier: "MainTabViewController")
                             let appDelegate = UIApplication.shared.delegate as! AppDelegate
