@@ -1243,7 +1243,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 109;
+				CURRENT_PROJECT_VERSION = 110;
 				DEVELOPMENT_TEAM = 8G562MW56M;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Eostart/Eos/Libraries/include\"";
 				INFOPLIST_FILE = Eostart/Base/Info.plist;
@@ -1252,7 +1252,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = io.wannabit.Eostarts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jj/Documents/GitHub/eostart/IOS/Eostart/Eos/Libraries/include/Bridging-Header.h";
@@ -1267,7 +1267,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 109;
+				CURRENT_PROJECT_VERSION = 110;
 				DEVELOPMENT_TEAM = 8G562MW56M;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Eostart/Eos/Libraries/include\"";
 				INFOPLIST_FILE = Eostart/Base/Info.plist;
@@ -1276,7 +1276,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = io.wannabit.Eostarts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jj/Documents/GitHub/eostart/IOS/Eostart/Eos/Libraries/include/Bridging-Header.h";
